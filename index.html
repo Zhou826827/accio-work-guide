@@ -3,411 +3,460 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Accio Work 国际站商家使用指南（进阶版）</title>
+<title>Accio Work 商家平台</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif;
-    line-height: 1.8;
-    color: #1a1a2e;
-    background: #f8f9fc;
-    padding: 0;
-  }
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-    background: #fff;
-    min-height: 100vh;
-    box-shadow: 0 0 40px rgba(0,0,0,0.06);
-    padding: 60px 72px;
-  }
-  h1 {
-    font-size: 2.2em;
-    font-weight: 800;
-    color: #0f1b4c;
-    margin-bottom: 8px;
-    letter-spacing: -0.5px;
-    border-bottom: 4px solid #4361ee;
-    padding-bottom: 16px;
-  }
-  .subtitle {
-    font-size: 0.95em;
-    color: #6b7280;
-    border-left: 3px solid #4361ee;
-    padding: 10px 16px;
-    background: #f0f4ff;
-    margin: 20px 0 32px;
-    border-radius: 0 6px 6px 0;
-  }
-  h2 {
-    font-size: 1.55em;
-    font-weight: 700;
-    color: #0f1b4c;
-    margin: 48px 0 16px;
-    padding: 8px 0;
-    border-bottom: 2px solid #e5e7eb;
-    scroll-margin-top: 20px;
-  }
-  h3 {
-    font-size: 1.2em;
-    font-weight: 600;
-    color: #1e3a5f;
-    margin: 32px 0 12px;
-    scroll-margin-top: 20px;
-  }
-  h4 {
-    font-size: 1.05em;
-    font-weight: 600;
-    color: #2d4a7a;
-    margin: 24px 0 10px;
-    scroll-margin-top: 20px;
-  }
-  p { margin: 10px 0; color: #374151; }
-  a { color: #4361ee; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
-  a:hover { border-bottom-color: #4361ee; }
-  strong { color: #1a1a2e; }
-  ul, ol { margin: 10px 0 10px 24px; color: #374151; }
-  li { margin: 6px 0; }
-  hr {
-    border: none;
-    height: 1px;
-    background: linear-gradient(to right, transparent, #d1d5db, transparent);
-    margin: 40px 0;
-  }
-  code {
-    font-family: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
-    background: #f1f3f8;
-    color: #d6336c;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.88em;
-  }
-  pre {
-    background: #1e293b;
-    color: #e2e8f0;
-    padding: 20px 24px;
-    border-radius: 8px;
-    overflow-x: auto;
-    margin: 14px 0;
-    font-size: 0.88em;
-    line-height: 1.7;
-    border-left: 4px solid #4361ee;
-  }
-  pre code {
-    background: none;
-    color: inherit;
-    padding: 0;
-    font-size: inherit;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 16px 0;
-    font-size: 0.92em;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  th {
-    background: #0f1b4c;
-    color: #fff;
-    padding: 12px 16px;
-    text-align: left;
-    font-weight: 600;
-  }
-  td {
-    padding: 10px 16px;
-    border-bottom: 1px solid #e5e7eb;
-  }
-  tr:nth-child(even) { background: #f8f9fc; }
-  tr:hover { background: #eef2ff; }
-  .toc {
-    background: #f8f9fc;
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    padding: 24px 28px;
-    margin: 24px 0 40px;
-  }
-  .toc h2 {
-    margin: 0 0 16px;
-    padding: 0;
-    border: none;
-    font-size: 1.15em;
-    color: #0f1b4c;
-  }
-  .toc ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .toc > ul > li {
-    margin: 4px 0;
-  }
-  .toc li {
-    padding: 3px 0;
-  }
-  .toc ul ul {
-    margin-left: 20px;
-    margin-top: 2px;
-  }
-  .toc a {
-    color: #4361ee;
-    font-weight: 500;
-    border-bottom: none;
-  }
-  .toc a:hover { border-bottom: 1px solid #4361ee; }
-  .callout {
-    background: #fff7ed;
-    border-left: 4px solid #f59e0b;
-    padding: 14px 18px;
-    border-radius: 0 8px 8px 0;
-    margin: 14px 0;
-    font-size: 0.93em;
-  }
-  .callout-blue {
-    background: #eff6ff;
-    border-left: 4px solid #4361ee;
-    padding: 14px 18px;
-    border-radius: 0 8px 8px 0;
-    margin: 14px 0;
-    font-size: 0.93em;
-  }
-  .badge {
-    display: inline-block;
-    background: #4361ee;
-    color: #fff;
-    padding: 2px 10px;
-    border-radius: 12px;
-    font-size: 0.78em;
-    font-weight: 600;
-    margin-right: 6px;
-    vertical-align: middle;
-  }
-  .badge-green { background: #10b981; }
-  .badge-amber { background: #f59e0b; }
-  .badge-red { background: #ef4444; }
+:root {
+  --primary: #4f46e5;
+  --primary-light: #818cf8;
+  --primary-dark: #3730a3;
+  --accent: #06b6d4;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --text-secondary: #64748b;
+  --border: #e2e8f0;
+  --radius: 12px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.04);
+  --shadow-xl: 0 20px 50px rgba(0,0,0,0.12);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  line-height: 1.7; color: var(--text); background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
 
-  /* ===== Download Center ===== */
-  .dl-header { text-align: center; margin-bottom: 32px; }
-  .dl-header h2 { border: none; display: inline-block; font-size: 1.6em; margin-bottom: 8px; }
-  .dl-header p { color: #6b7280; font-size: 0.95em; max-width: 640px; margin: 0 auto; }
-  .dl-search-bar {
-    display: flex; gap: 8px; margin-bottom: 20px;
-  }
-  .dl-search-bar input {
-    flex: 1; padding: 10px 16px; border: 2px solid #e5e7eb; border-radius: 8px;
-    font-size: 0.95em; outline: none; transition: border-color 0.2s;
-    font-family: inherit;
-  }
-  .dl-search-bar input:focus { border-color: #4361ee; }
-  .dl-search-bar button {
-    padding: 10px 24px; background: #4361ee; color: #fff; border: none;
-    border-radius: 8px; font-size: 0.95em; font-weight: 600; cursor: pointer;
-    transition: background 0.2s; font-family: inherit;
-  }
-  .dl-search-bar button:hover { background: #3651d4; }
-  .dl-tabs {
-    display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px;
-  }
-  .dl-tab {
-    padding: 6px 16px; border-radius: 20px; border: 1.5px solid #d1d5db;
-    background: #fff; color: #4b5563; font-size: 0.85em; font-weight: 500;
-    cursor: pointer; transition: all 0.2s; font-family: inherit;
-  }
-  .dl-tab:hover { border-color: #4361ee; color: #4361ee; }
-  .dl-tab.active { background: #4361ee; color: #fff; border-color: #4361ee; }
-  .dl-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-  }
-  @media (max-width: 768px) {
-    .dl-grid { grid-template-columns: 1fr; }
-  }
-  .dl-card {
-    background: #fff; border: 1.5px solid #e5e7eb; border-radius: 12px;
-    padding: 24px; transition: all 0.25s; position: relative; overflow: hidden;
-  }
-  .dl-card:hover {
-    border-color: #4361ee; box-shadow: 0 4px 20px rgba(67,97,238,0.12);
-    transform: translateY(-2px);
-  }
-  .dl-card-icon {
-    width: 44px; height: 44px; border-radius: 10px; display: flex;
-    align-items: center; justify-content: center; font-size: 1.3em;
-    margin-bottom: 14px;
-  }
-  .dl-card h4 {
-    margin: 0 0 8px; font-size: 1em; font-weight: 700; color: #0f1b4c;
-  }
-  .dl-card .dl-desc {
-    font-size: 0.85em; color: #6b7280; line-height: 1.6; margin-bottom: 16px;
-    min-height: 54px;
-  }
-  .dl-card .dl-meta {
-    font-size: 0.78em; color: #9ca3af; margin-bottom: 14px;
-    display: flex; align-items: center; gap: 6px;
-  }
-  .dl-card .dl-meta .dl-dot { width: 4px; height: 4px; border-radius: 50%; background: #d1d5db; }
-  .dl-btn {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 8px 20px; border-radius: 8px; font-size: 0.85em;
-    font-weight: 600; cursor: pointer; transition: all 0.2s;
-    border: none; font-family: inherit;
-  }
-  .dl-btn-primary { background: #4361ee; color: #fff; }
-  .dl-btn-primary:hover { background: #3651d4; }
-  .dl-btn-ghost {
-    background: #f0f4ff; color: #4361ee; border: 1.5px solid #4361ee;
-  }
-  .dl-btn-ghost:hover { background: #4361ee; color: #fff; }
-  .dl-empty {
-    text-align: center; padding: 48px; color: #9ca3af; font-size: 0.95em;
-    grid-column: 1 / -1;
-  }
-  .dl-count {
-    text-align: center; color: #9ca3af; font-size: 0.82em; margin-top: 20px;
-  }
+/* ===== NAVBAR ===== */
+.navbar {
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(255,255,255,0.85); backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-size: 1.15em; font-weight: 800; color: var(--primary);
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-logo svg { width: 28px; height: 28px; }
+.nav-links { display: flex; gap: 8px; align-items: center; }
+.nav-links a {
+  color: var(--text-secondary); text-decoration: none; font-weight: 500;
+  font-size: 0.9em; padding: 8px 16px; border-radius: 8px;
+  transition: all 0.2s;
+}
+.nav-links a:hover { color: var(--primary); background: #f0f0ff; }
+.nav-links a.active { color: var(--primary); background: #eef2ff; }
+.nav-cta {
+  background: var(--primary) !important; color: #fff !important;
+  padding: 8px 20px !important; border-radius: 8px !important;
+  font-weight: 600 !important; transition: all 0.2s !important;
+}
+.nav-cta:hover { background: var(--primary-dark) !important; transform: translateY(-1px); }
 
-  @media print {
-    body { background: #fff; }
-    .container { box-shadow: none; padding: 24px; }
-    pre { white-space: pre-wrap; word-break: break-all; }
-    h2, h3, h4 { page-break-after: avoid; }
-  }
-  @media (max-width: 768px) {
-    .container { padding: 24px 20px; }
-    h1 { font-size: 1.6em; }
-  }
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 30%, #4338ca 60%, #6366f1 100%);
+  color: #fff; padding: 80px 32px 64px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(99,102,241,0.3) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(6,182,212,0.2) 0%, transparent 50%);
+}
+.hero-content { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+  padding: 6px 16px; border-radius: 20px; font-size: 0.82em;
+  font-weight: 500; margin-bottom: 24px; backdrop-filter: blur(10px);
+}
+.hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--success); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+.hero h1 {
+  font-size: 2.8em; font-weight: 900; line-height: 1.15;
+  margin-bottom: 16px; letter-spacing: -1px;
+}
+.hero h1 .gradient-text {
+  background: linear-gradient(135deg, #a5b4fc, #67e8f9);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero p { font-size: 1.1em; color: rgba(255,255,255,0.75); margin-bottom: 32px; line-height: 1.7; }
+.hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 28px; border-radius: 10px; font-size: 0.95em;
+  font-weight: 600; cursor: pointer; transition: all 0.25s;
+  text-decoration: none; border: none; font-family: inherit;
+}
+.btn-white { background: #fff; color: var(--primary-dark); }
+.btn-white:hover { background: #f0f0ff; transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.3); }
+.btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+/* ===== SECTION LAYOUT ===== */
+.section {
+  max-width: 1120px; margin: 0 auto;
+  padding: 64px 32px;
+}
+.section-header {
+  text-align: center; margin-bottom: 48px;
+}
+.section-header h2 {
+  font-size: 1.85em; font-weight: 800; color: var(--text);
+  margin-bottom: 12px; letter-spacing: -0.5px;
+}
+.section-header p { color: var(--text-secondary); font-size: 1em; max-width: 560px; margin: 0 auto; }
+.section-divider { height: 1px; background: var(--border); max-width: 1120px; margin: 0 auto; }
+
+/* ===== FEATURE CARDS ===== */
+.features-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+}
+.feature-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 28px;
+  transition: all 0.3s; position: relative; overflow: hidden;
+}
+.feature-card:hover {
+  border-color: var(--primary-light); transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.feature-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4em; margin-bottom: 16px;
+}
+.feature-card h3 { font-size: 1.05em; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+.feature-card p { font-size: 0.88em; color: var(--text-secondary); line-height: 1.65; }
+
+/* ===== GUIDE TABS ===== */
+.guide-tabs {
+  display: flex; gap: 4px; background: #f1f5f9; border-radius: 10px;
+  padding: 4px; margin-bottom: 32px; overflow-x: auto;
+}
+.guide-tab {
+  padding: 10px 20px; border-radius: 8px; border: none; background: transparent;
+  color: var(--text-secondary); font-size: 0.88em; font-weight: 600;
+  cursor: pointer; transition: all 0.2s; white-space: nowrap; font-family: inherit;
+}
+.guide-tab:hover { color: var(--text); }
+.guide-tab.active { background: #fff; color: var(--primary); box-shadow: var(--shadow); }
+.guide-panel { display: none; }
+.guide-panel.active { display: block; animation: fadeUp 0.35s ease; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ===== GUIDE CONTENT ===== */
+.guide-content h3 {
+  font-size: 1.15em; font-weight: 700; color: var(--text); margin: 28px 0 12px;
+  padding-left: 12px; border-left: 3px solid var(--primary);
+}
+.guide-content h4 {
+  font-size: 0.95em; font-weight: 600; color: var(--text); margin: 20px 0 8px;
+}
+.guide-content p { color: #374151; font-size: 0.9em; margin: 8px 0; }
+.guide-content ul, .guide-content ol { margin: 8px 0 8px 20px; font-size: 0.9em; color: #374151; }
+.guide-content li { margin: 5px 0; }
+.guide-content pre {
+  background: #0f172a; color: #e2e8f0; padding: 18px 22px;
+  border-radius: 10px; overflow-x: auto; font-size: 0.82em;
+  line-height: 1.75; margin: 12px 0; font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+}
+.guide-content pre code { background: none; color: inherit; padding: 0; font-size: inherit; }
+.guide-content code {
+  font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+  background: #f1f5f9; color: #e11d48; padding: 2px 6px;
+  border-radius: 4px; font-size: 0.88em;
+}
+.callout-box {
+  background: linear-gradient(135deg, #eff6ff, #f0f0ff);
+  border-left: 4px solid var(--primary);
+  padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 14px 0; font-size: 0.88em;
+}
+.callout-warm {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-left: 4px solid var(--warning);
+  padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 14px 0; font-size: 0.88em;
+}
+.tag {
+  display: inline-block; padding: 2px 10px; border-radius: 6px;
+  font-size: 0.72em; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.5px; margin-right: 6px;
+}
+.tag-blue { background: #dbeafe; color: #1d4ed8; }
+.tag-green { background: #d1fae5; color: #065f46; }
+.tag-amber { background: #fef3c7; color: #92400e; }
+.tag-red { background: #fee2e2; color: #991b1b; }
+.cmd-table {
+  width: 100%; border-collapse: separate; border-spacing: 0;
+  margin: 16px 0; border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.cmd-table th {
+  background: var(--primary-dark); color: #fff; padding: 12px 18px;
+  font-size: 0.85em; font-weight: 600; text-align: left;
+}
+.cmd-table td {
+  padding: 11px 18px; border-bottom: 1px solid var(--border);
+  font-size: 0.88em; background: #fff;
+}
+.cmd-table tr:last-child td { border-bottom: none; }
+.cmd-table tr:hover td { background: #f8faff; }
+
+/* ===== DOWNLOAD CENTER ===== */
+.dl-search-bar {
+  display: flex; gap: 8px; margin-bottom: 20px;
+}
+.dl-search-bar input {
+  flex: 1; padding: 12px 18px; border: 2px solid var(--border);
+  border-radius: 10px; font-size: 0.92em; outline: none;
+  transition: border-color 0.2s; font-family: inherit; background: #fff;
+}
+.dl-search-bar input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.1); }
+.dl-search-bar button {
+  padding: 12px 28px; background: var(--primary); color: #fff;
+  border: none; border-radius: 10px; font-size: 0.92em;
+  font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: inherit;
+}
+.dl-search-bar button:hover { background: var(--primary-dark); }
+.dl-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+.dl-tab {
+  padding: 7px 18px; border-radius: 20px; border: 1.5px solid var(--border);
+  background: #fff; color: var(--text-secondary); font-size: 0.84em;
+  font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: inherit;
+}
+.dl-tab:hover { border-color: var(--primary-light); color: var(--primary); }
+.dl-tab.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.dl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.dl-card {
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: var(--radius); padding: 24px;
+  transition: all 0.3s; position: relative;
+}
+.dl-card:hover {
+  border-color: var(--primary-light); box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+.dl-card-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3em; margin-bottom: 14px;
+}
+.dl-card h4 { font-size: 0.98em; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.dl-card .dl-desc {
+  font-size: 0.83em; color: var(--text-secondary); line-height: 1.65;
+  margin-bottom: 16px; min-height: 48px;
+}
+.dl-card .dl-meta {
+  font-size: 0.76em; color: #94a3b8; margin-bottom: 14px;
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+}
+.dl-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: #cbd5e1; }
+.dl-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 20px; border-radius: 8px; font-size: 0.83em;
+  font-weight: 600; cursor: pointer; transition: all 0.2s;
+  border: none; font-family: inherit;
+}
+.dl-btn-primary { background: var(--primary); color: #fff; }
+.dl-btn-primary:hover { background: var(--primary-dark); }
+.dl-btn-ghost { background: #f0f0ff; color: var(--primary); border: 1.5px solid var(--primary-light); }
+.dl-btn-ghost:hover { background: var(--primary); color: #fff; }
+.dl-btn-soon {
+  background: #f1f5f9; color: var(--text-secondary);
+  cursor: default;
+}
+.dl-empty { text-align: center; padding: 48px; color: #94a3b8; font-size: 0.92em; grid-column: 1/-1; }
+.dl-count { text-align: center; color: #94a3b8; font-size: 0.82em; margin-top: 20px; }
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #0f172a; color: rgba(255,255,255,0.6);
+  padding: 40px 32px; text-align: center; font-size: 0.85em;
+}
+.footer a { color: var(--primary-light); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .features-grid, .dl-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 1.8em; }
+  .hero { padding: 48px 20px 40px; }
+  .section { padding: 40px 20px; }
+  .navbar { padding: 0 16px; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .guide-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media print {
+  .navbar, .hero { display: none; }
+  .section { padding: 20px 0; }
+  pre { white-space: pre-wrap; word-break: break-all; }
+}
 </style>
 </head>
 <body>
-<div class="container">
 
-<h1>Accio Work 国际站商家使用指南（进阶版）</h1>
-<div class="subtitle">
-  本文档整合了《Accio Work国际站商家使用指南》与《头部客户ACW诊断常用技能》两份资料，并参考"技能包→智能体一键部署"流程，重新梳理为一份进阶版操作手册。适用于阿里国际站（Alibaba.com）商家日常运营、诊断与增长场景。
-</div>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-logo">
+    <svg viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="7" fill="#4f46e5"/><path d="M8 20l6-14 6 14" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 16h8" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+    Accio Work 商家平台
+  </div>
+  <div class="nav-links">
+    <a href="#home" class="active" onclick="scrollToSection('home',this)">首页</a>
+    <a href="#guide" onclick="scrollToSection('guide',this)">使用指南</a>
+    <a href="#downloads" onclick="scrollToSection('downloads',this)">技能包下载</a>
+    <a href="https://www.accio-ai.com/login?sId=3zi8f11D" target="_blank" class="nav-cta">登录 Accio Work</a>
+  </div>
+</nav>
 
-<div class="toc">
-<h2>目录</h2>
-<ul>
-  <li><a href="#s1">一、Accio Work 2.0 是什么</a></li>
-  <li><a href="#s2">二、基础配置：从零到一搭建你的 Agent</a>
-    <ul>
-      <li><a href="#s2-1">2.1 创建单个智能体</a></li>
-      <li><a href="#s2-2">2.2 智能体喂养与训练</a></li>
-      <li><a href="#s2-3">2.3 创建智能体团队</a></li>
-      <li><a href="#s2-4">2.4 设置定时任务</a></li>
-      <li><a href="#s2-5">2.5 提示词指南</a></li>
-    </ul>
-  </li>
-  <li><a href="#s3">三、微信 / 企微绑定（消息渠道）</a></li>
-  <li><a href="#s4">四、技能体系全景图</a>
-    <ul>
-      <li><a href="#s4-1">板块一：市场洞察与竞品分析</a></li>
-      <li><a href="#s4-2">板块二：选品与产品策略</a></li>
-      <li><a href="#s4-3">板块三：发品、标题与详情页优化</a></li>
-      <li><a href="#s4-4">板块四：主图、视觉与展会物料</a></li>
-      <li><a href="#s4-5">板块五：询盘分析、买家画像与客户管理</a></li>
-      <li><a href="#s4-6">板块六：店铺经营定位与深度诊断</a></li>
-    </ul>
-  </li>
-  <li><a href="#s5">五、智能体团队与高转化 SOP</a></li>
-  <li><a href="#s6">六、技能包→智能体一键部署</a></li>
-  <li><a href="#s7">七、常用指令速查表</a></li>
-  <li><a href="#s8">八、技能包资源索引</a></li>
-  <li><a href="#s9">九、技能包下载中心</a></li>
-</ul>
-</div>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge"><span class="dot"></span> 7×24 小时智能 Agent 团队运行中</div>
+    <h1>你的<span class="gradient-text">外贸生意大脑</span><br>从此不再单打独斗</h1>
+    <p>Accio Work 为全球中小企业主打造：全链路自动化、竞品分析、智能选品、爆款标题、<br>6 张主图生成、询盘背调、客户唤醒 —— 一支永不下班的 Agent 团队。</p>
+    <div class="hero-actions">
+      <a href="#downloads" class="btn btn-white" onclick="scrollToSection('downloads')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        技能包下载
+      </a>
+      <a href="#guide" class="btn btn-outline" onclick="scrollToSection('guide')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        使用指南
+      </a>
+    </div>
+  </div>
+</section>
 
-<hr>
+<!-- FEATURES -->
+<section class="section">
+  <div class="section-header">
+    <h2>为什么选择 Accio Work</h2>
+    <p>依托阿里 26 年外贸数据，比通用 AI 更懂中国供应链</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#eef2ff;color:#4f46e5">🔄</div>
+      <h3>全链路自动化</h3>
+      <p>市场分析 → 选品 → 供应商筛选 → 采购谈判 → 社媒推广，7×24 自主完成长流程任务。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#ecfdf5;color:#10b981">🏪</div>
+      <h3>30 分钟搭建网店</h3>
+      <p>给出创意，Accio 可在 30 分钟内从无到有搭建一个真实的 Shopify 独立站。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#fef3c7;color:#f59e0b">🤝</div>
+      <h3>自带谈判专家</h3>
+      <p>安全调用邮箱权限，代替你与供应商多轮邮件砍价，直到达成目标价格。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#fce7f3;color:#ec4899">📊</div>
+      <h3>竞品深度分析</h3>
+      <p>SWOT 分析、交易评价、品牌宣传、爆品拆解、关键词布局，一键生成竞品报告。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#f0f9ff;color:#06b6d4">📸</div>
+      <h3>6 张主图 · 38% 转化</h3>
+      <p>B2B 高商机主图自动生成，多行业验证商机转化率高达 38%。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#faf5ff;color:#8b5cf6">🧩</div>
+      <h3>开放 Skills 生态</h3>
+      <p>将独特商业流程封装成"技能"分享，能力库随全球用户使用不断扩充。</p>
+    </div>
+  </div>
+</section>
 
-<h2 id="s1">一、Accio Work 2.0 是什么</h2>
-<p>Accio Work 是为全球中小企业主和创业者量身定制的"生意大脑"。它不是简单的聊天机器人，而是一支会自主做生意的 Agent 团队。用户通过对话框与内置的多个专业 Agent 沟通并发出指令，Accio Work 就会开启 7×24 小时的自动工作模式。</p>
+<div class="section-divider"></div>
 
-<p><strong>核心能力一览：</strong></p>
-<ul>
-  <li><strong>全链路自动化</strong>：7×24 小时自主完成市场分析、产品选品、寻找供应商、采购谈判、社媒推广的长流程任务。</li>
-  <li><strong>30 分钟搭建网店</strong>：给出创意，Accio 可在 30 分钟内从无到有搭建一个真实的 Shopify 独立站。</li>
-  <li><strong>自带谈判专家属性</strong>：安全调用邮箱权限，代替买家与供应商进行多轮邮件砍价，直到达成目标价格。</li>
-  <li><strong>开放的 Skills 生态</strong>：用户可以将独特的商业流程封装成"技能（Skills）"分享，能力库随全球用户使用不断扩充。</li>
-  <li><strong>懂中国供应链</strong>：依托阿里 26 年外贸数据，决策比通用模型更准确，幻觉更少。</li>
-</ul>
+<!-- GUIDE SECTION -->
+<section class="section" id="guide">
+  <div class="section-header">
+    <h2>使用指南</h2>
+    <p>从配置到实战，六大板块覆盖外贸全场景</p>
+  </div>
 
-<div class="callout-blue">
-  <strong>下载与注册：</strong>访问 <a href="https://www.accio-ai.com/login?sId=3zi8f11D" target="_blank">https://www.accio-ai.com/login?sId=3zi8f11D</a>，使用邮箱注册登录即可。<br>
-  安装指导视频：<a href="https://weixin.qq.com/sph/A5Gpsdqfx4" target="_blank">https://weixin.qq.com/sph/A5Gpsdqfx4</a>
-</div>
+  <div class="guide-tabs" id="guideTabs">
+    <button class="guide-tab active" data-panel="p-setup" onclick="switchGuide(this)">基础配置</button>
+    <button class="guide-tab" data-panel="p-bindmsg" onclick="switchGuide(this)">消息绑定</button>
+    <button class="guide-tab" data-panel="p-compete" onclick="switchGuide(this)">竞品分析</button>
+    <button class="guide-tab" data-panel="p-product" onclick="switchGuide(this)">选品 · 发品</button>
+    <button class="guide-tab" data-panel="p-visual" onclick="switchGuide(this)">主图 · 视觉</button>
+    <button class="guide-tab" data-panel="p-inquiry" onclick="switchGuide(this)">询盘 · 背调</button>
+    <button class="guide-tab" data-panel="p-brand" onclick="switchGuide(this)">经营定位</button>
+    <button class="guide-tab" data-panel="p-team" onclick="switchGuide(this)">团队 · SOP</button>
+    <button class="guide-tab" data-panel="p-quickref" onclick="switchGuide(this)">指令速查</button>
+  </div>
 
-<hr>
+  <!-- PANEL: SETUP -->
+  <div class="guide-panel active" id="p-setup">
+    <div class="guide-content">
+      <h3>创建智能体</h3>
+      <p>在 Accio Work 中按业务职能创建不同的智能体，每个专注于一个领域：市场洞察、供应商评估、专业技能定制、自我进化。</p>
+      <h3>智能体喂养与训练</h3>
+      <p>创建后可通过"知识喂养"提升专业度——上传行业报告、内部材料，让智能体学习你行业的独特逻辑。不喂养也可直接使用，Agent 已具备基础能力。</p>
+      <h3>创建智能体团队</h3>
+      <p>将多个智能体组合为"团队"，实现跨职能协作。例如将"竞品分析""选品""详情页优化"组合为完整运营团队。</p>
+      <h3>设置定时任务</h3>
+      <p>支持定时执行。例如"每天 9:00 自动分析近 7 天询盘并发送报告"，实现运营自动化。</p>
+      <div class="callout-box">
+        <strong>下载与注册：</strong>访问 <a href="https://www.accio-ai.com/login?sId=3zi8f11D" target="_blank">accio-ai.com</a>，使用邮箱注册登录即可。
+        安装指导视频：<a href="https://weixin.qq.com/sph/A5Gpsdqfx4" target="_blank">微信视频号</a>
+      </div>
+      <h3>提示词指南</h3>
+      <p>官方提示词参考库：<a href="https://awbforzjbusiness.1d.alibaba-inc.com/#/prompts" target="_blank">提示词参考库</a>，建议新手先从模板入手。</p>
+    </div>
+  </div>
 
-<h2 id="s2">二、基础配置：从零到一搭建你的 Agent</h2>
+  <!-- PANEL: MSG BINDING -->
+  <div class="guide-panel" id="p-bindmsg">
+    <div class="guide-content">
+      <h3>企业微信绑定 <span class="tag tag-blue">推荐</span></h3>
+      <ol>
+        <li>打开 Accio Work → 左侧【消息渠道】→ 点击【企业微信/微信客服】</li>
+        <li>用企业微信管理员扫码授权 → 选择接入的企业/可见范围</li>
+        <li>企微后台：应用管理 → 微信客服 → 开启并添加 Accio 机器人</li>
+        <li>客户微信/企微咨询 → Accio 自动 AI 接待</li>
+      </ol>
+      <h3>个人微信绑定 <span class="tag tag-green">简易版</span></h3>
+      <ol>
+        <li>Accio Work → 【配对授权/微信集成】→ 生成二维码</li>
+        <li>手机微信扫码 → 确认授权（无需 AppID/Secret）</li>
+        <li>微信发消息 → Accio 自动响应</li>
+      </ol>
+      <h3>微信公众号绑定</h3>
+      <ol>
+        <li>公众号后台 → 设置与开发 → 开发者 ID → 复制 AppID/AppSecret</li>
+        <li>Accio 【消息渠道】→ 公众号 → 粘贴 ID/密钥 → 提交</li>
+        <li>配置 IP 白名单与接口 → 完成</li>
+      </ol>
+      <div class="callout-warm">
+        <strong>大客户场景：</strong>优先企业微信 + 微信客服，支持客户微信直接咨询、AI 自动回复、工单同步。
+      </div>
+    </div>
+  </div>
 
-<h3 id="s2-1">2.1 创建单个智能体</h3>
-<p>在 Accio Work 中，你可以按业务职能创建不同的智能体，每个智能体专注于一个领域。常见角色包括：</p>
-<ul>
-  <li><strong>市场洞察</strong>：实时分析海外需求，帮你看清全球风向，不再盲目选品。</li>
-  <li><strong>供应商评估</strong>：智能筛选优质货源，把控跨境供应链第一关。</li>
-  <li><strong>专业技能定制</strong>：将运营大牛的秘籍录入变成 AI 技能，让 Agent 24 小时照着干。</li>
-  <li><strong>自我进化</strong>：不只执行指令，还会复盘反馈，越用越懂你的生意。</li>
-</ul>
-
-<h3 id="s2-2">2.2 智能体喂养与训练</h3>
-<p>创建智能体后，可以通过"知识喂养"提升其专业度。最有效的方式是上传行业报告、内部专业材料等，让智能体学习你所在行业的独特逻辑。当然也可以不喂养直接开干——Agent 已具备基础能力。</p>
-
-<h3 id="s2-3">2.3 创建智能体团队</h3>
-<p>当单个智能体成熟后，可以将多个智能体组合为"团队"，实现跨职能协作。例如：将"竞品分析 Agent""选品 Agent""详情页优化 Agent"组合为一支完整的运营团队，由它们自动串联执行复杂任务。</p>
-
-<h3 id="s2-4">2.4 设置定时任务</h3>
-<p>智能体支持定时执行任务。例如设置"每天早上 9:00 自动分析近 7 天询盘情况并发送报告"，实现运营自动化。</p>
-
-<h3 id="s2-5">2.5 提示词指南</h3>
-<p>官方提供了提示词参考库：<a href="https://awbforzjbusiness.1d.alibaba-inc.com/#/prompts" target="_blank">提示词参考库</a>，建议新手先从模板入手。</p>
-
-<hr>
-
-<h2 id="s3">三、微信 / 企微绑定（消息渠道）</h2>
-<p>Accio Work 支持绑定微信（个人/企业微信/公众号），实现消息自动响应。</p>
-
-<h3>3.1 企业微信绑定 <span class="badge">推荐</span>（外贸/大客户场景最稳）</h3>
-<ol>
-  <li>打开 Accio Work → 左侧【消息渠道】→ 点击【企业微信/微信客服】</li>
-  <li>用企业微信管理员扫码授权 → 选择要接入的企业/可见范围</li>
-  <li>企微后台：应用管理 → 微信客服 → 开启并添加 Accio 机器人</li>
-  <li>完成后客户微信/企微咨询 → Accio 自动 AI 接待/同步工作台</li>
-</ol>
-
-<h3>3.2 个人微信绑定 <span class="badge badge-green">简易版</span>（扫码即用）</h3>
-<ol>
-  <li>Accio Work → 【配对授权/微信集成】→ 生成二维码</li>
-  <li>手机微信扫码 → 确认授权（无需 AppID/Secret）</li>
-  <li>绑定成功：微信发消息 → Accio 自动响应/同步处理</li>
-</ol>
-
-<h3>3.3 微信公众号绑定（官网/私域引流用）</h3>
-<ol>
-  <li>公众号后台 → 设置与开发 → 开发者 ID → 复制 AppID/AppSecret</li>
-  <li>Accio 【消息渠道】→ 公众号 → 粘贴 ID/密钥 → 提交</li>
-  <li>配置 IP 白名单与接口 → 完成授权</li>
-</ol>
-
-<div class="callout">
-  <strong>大客户场景关键要点：</strong>优先使用企业微信 + 微信客服，支持客户微信直接咨询、AI 自动回复、工单同步。管理员扫码授权即可，无需复杂开发。适用于外贸询盘、客户跟进、微信消息 AI 自动处理。
-</div>
-
-<hr>
-
-<h2 id="s4">四、技能体系全景图</h2>
-<p>以下将两份文档中涉及的所有技能按业务场景分为六大板块，每个板块包含对应的技能包、指令模板和使用建议。</p>
-
-<h3 id="s4-1">板块一：市场洞察与竞品分析</h3>
-<p><strong>适用场景：</strong>快速了解行业格局、拆解同行竞品、为后续诊断提供方向。</p>
-<p><strong>技能包：</strong>竞品分析 Skill</p>
-
-<p><strong>简易版指令：</strong></p>
-<pre><code>输入公司名 + 店铺网址 + 竞品分析</code></pre>
-
-<p><strong>深度版指令：</strong></p>
-<pre><code>阿里国际站深度竞品分析，包括不限于同行国际站店铺竞品分析：
+  <!-- PANEL: COMPETE -->
+  <div class="guide-panel" id="p-compete">
+    <div class="guide-content">
+      <h3>竞品分析</h3>
+      <p>快速了解行业格局、拆解同行竞品、为后续诊断提供方向。</p>
+      <h4>简易版指令</h4>
+      <pre><code>输入公司名 + 店铺网址 + 竞品分析</code></pre>
+      <h4>深度版指令</h4>
+      <pre><code>阿里国际站深度竞品分析，包括不限于同行国际站店铺竞品分析：
 - 交易/评价公开信息、星等级公开情况
 - 品牌宣传板块、产品分组定位
 - 爆品 5 款链接、页面布局优劣势
@@ -417,565 +466,319 @@
 滑梯同行：**游乐.en.alibaba.com、***家具.en.alibaba.com
 室内游乐同行：***设备.en.alibaba.com
 大型户外游乐：***实业.en.alibaba.com</code></pre>
+      <div class="callout-box">
+        <strong>ACW 诊断场景：</strong>快速了解行业及客户同行，为后续诊断规划提供方向（SWOT 分析）。技能包见《Accio_Skills_Backup竞品深度分析.7z》。
+      </div>
+    </div>
+  </div>
 
-<div class="callout-blue">
-  <strong>ACW 诊断常用场景：</strong>初衷是快速了解一个行业以及客户的同行，为后续的诊断规划提供有价值的信息和方向（SWOT 分析）。技能包见《Accio_Skills_Backup竞品深度分析.7z》。
-</div>
-
-<hr>
-
-<h3 id="s4-2">板块二：选品与产品策略</h3>
-<p><strong>适用场景：</strong>深度选品报告、蓝海机会扫描、产品组合取舍。</p>
-<p><strong>技能包：</strong>选品 Skill（基础版 + 进阶版）</p>
-
-<p><strong>标准指令模板：</strong></p>
-<pre><code>请基于「供应商选品分析」和「选品雷达」技能，为我分析以下供应商/品类：
+  <!-- PANEL: PRODUCT -->
+  <div class="guide-panel" id="p-product">
+    <div class="guide-content">
+      <h3>选品分析</h3>
+      <p>深度选品报告、蓝海机会扫描、产品组合取舍。</p>
+      <pre><code>请基于「供应商选品分析」和「选品雷达」技能，为我分析以下供应商/品类：
 [输入店铺网址或公司名称]
 
-要求输出一份完整的深度选品报告，必须包含以下模块：
-1. 供应商画像分析：提取年限、主营品类、响应率及核心认证
+要求输出完整深度选品报告，必须包含：
+1. 供应商画像：年限、主营品类、响应率及核心认证
 2. 产品线四象限分类：核心款、潜力款、走量款、不建议款
-3. 跨平台需求验证：对比 Amazon、TikTok Shop 和 Google Trends 数据
+3. 跨平台需求验证：对比 Amazon、TikTok Shop、Google Trends
 4. 选品优先级矩阵：7 列详细表格
 5. 重点产品深度拆解：1-2 个三星级产品的差异化机会
 6. 1688 溯源推荐：5 家同类产业带头部工厂店
 7. 全量参考链接补完
-8. 3 步行动指南：今天、本周、本月具体建议</code></pre>
-
-<p><strong>进阶指令（高阶场景）：</strong></p>
-<ul>
-  <li><span class="badge badge-red">攻坚型</span> "针对 [类目/产品]，帮我拆解前 3 名头部竞品的 Review 痛点分布，并找出一个能作为我们新品卖点的'爆破口'。"</li>
-  <li><span class="badge badge-amber">防御型</span> "分析 [竞争对手] 的流量结构和定价权重，评估如果他们降价 10%，对我们的利润空间会有多大冲击？"</li>
-  <li><span class="badge">决策型</span> "我想进入 [新类目]，请使用 Competitive Landscape 框架评估该类目的'护城河'高度，并给出 Go/No-Go 建议。"</li>
-</ul>
-
-<p><strong>ACW 诊断场景指令：</strong></p>
-<pre><code>我们从真实的店铺数据和市场洞察开始，帮您的主营类目做一次深度的产品组合取舍：
-1. 诊断当前店铺 SKU：提供店铺信息或数据表，筛选出真正具备"主推款"相的产品
-2. 扫描特定类目蓝海机会：指定感兴趣的品类，用内置蓝海工具抓取最新跨平台商机</code></pre>
-
-<p>技能包见《选品分析报告_SpringSanitary与选品 技能包.zip》。</p>
-
-<hr>
-
-<h3 id="s4-3">板块三：发品、标题与详情页优化</h3>
-<p><strong>适用场景：</strong>产品上架、标题 SEO 优化、详情页改版、卖点提炼。</p>
-
-<h4>4.3.1 结构化卖点（黄金五段论）</h4>
-<pre><code>任务1：帮我为这款产品写[黄金五段]卖点文案：
+8. 3 步行动指南：今天、本周、本月</code></pre>
+      <h4>进阶指令</h4>
+      <ul>
+        <li><span class="tag tag-red">攻坚型</span> "针对 [类目]，拆解前 3 名头部竞品的 Review 痛点分布，找出新品爆破口。"</li>
+        <li><span class="tag tag-amber">防御型</span> "分析 [竞争对手] 流量结构和定价权重，降价 10% 对利润的冲击。"</li>
+        <li><span class="tag tag-blue">决策型</span> "进入 [新类目]，用 Competitive Landscape 框架评估护城河，给 Go/No-Go 建议。"</li>
+      </ul>
+      <h3>发品 · 标题 · 详情页</h3>
+      <h4>黄金五段论卖点</h4>
+      <pre><code>任务1：帮我为这款产品写[黄金五段]卖点文案：
 产品名称：Running and Walking Shoes
 链接：https://www.alibaba.com/product-detail/...
 
-任务2：帮我生成这套产品的[商品图集]：（同上链接）
-
-任务3：针对[Running and Walking Shoes]，生成一套 200 问的[FAQ 知识库]</code></pre>
-
-<h4>4.3.2 爆款标题优化</h4>
-<p><strong>核心能力：</strong>关键词权重逻辑（核心关键词后置提升搜索权重）、多行业模板、高点击词库（CE Certified, Factory Price, Ready to Ship 等 B2B 高转化词汇）、SEO 校验（80-120 字符优化移动端首屏）。</p>
-<pre><code>指令：产品名称: ***
+任务2：帮我生成这套产品的[商品图集]
+任务3：针对该产品生成一套 200 问的[FAQ 知识库]</code></pre>
+      <h4>爆款标题优化</h4>
+      <pre><code>指令：产品名称: ***
 输出：20 款标题卖点 + 标题卖点矩阵 + 关键词矩阵 + 首战策略 + listing 矩阵</code></pre>
-<p><strong>人格描述（标题优化专家）：</strong>专业、敏锐、极简、高效。像一份精准的行业情报分析报告，在数据面前是冷酷的分析师，在创意面前是最懂海外买家的营销专家。只追求能带来高质量询盘的精准热词。</p>
+      <h4>详情页优化（三种方案）</h4>
+      <p><span class="tag tag-blue">方案一 · 最推荐</span> 特定产品深度诊断：竞品对标 → 缺陷定位 → 改版建议 → 视觉参考</p>
+      <p><span class="tag tag-green">方案二</span> 特定市场精准优化：买家分析、视觉偏好、痛点挖掘</p>
+      <p><span class="tag tag-amber">方案三</span> 行业爆款抄作业：搜索前 3 家高表现供应商</p>
+    </div>
+  </div>
 
-<h4>4.3.3 详情页优化（三种方案）</h4>
-<p><span class="badge">方案一</span><strong> 特定产品深度诊断（最推荐）</strong></p>
-<pre><code>请作为阿里国际站资深运营专家，对以下产品链接进行'全面体检'诊断：[产品链接]
-
-要求：
-1. 竞品对标：搜索关键词下前 5 名标杆产品
-2. 缺陷定位：SEO 标题、MOQ 策略、详情页首屏逻辑、视觉排版 4 个维度
-3. 改版建议：优化后的 SEO 标题 + A+ 详情页 5 个核心模块
-4. 视觉参考：2-3 个高转化率 A+ 详情页风格参考</code></pre>
-
-<p><span class="badge badge-green">方案二</span><strong> 特定市场精准优化</strong></p>
-<pre><code>我想针对 [目标国家] 市场优化我的 [产品名称]。
-要求：买家分析、视觉偏好、痛点挖掘、A+ 版块顺序策划</code></pre>
-
-<p><span class="badge badge-amber">方案三</span><strong> 行业爆款抄作业</strong></p>
-<pre><code>搜索 [产品关键词] 行业中询盘和成交表现最好的前 3 家供应商
-（优先金品诚企/Verified Supplier）</code></pre>
-
-<hr>
-
-<h3 id="s4-4">板块四：主图、视觉与展会物料</h3>
-<p><strong>适用场景：</strong>6 张商品主图、详情页结构图、应用场景图、展会 Banner 生成。</p>
-
-<h4>4.4.1 六张主图生成</h4>
-<pre><code>指令（模型选择专业版/极致版）：
+  <!-- PANEL: VISUAL -->
+  <div class="guide-panel" id="p-visual">
+    <div class="guide-content">
+      <h3>6 张主图生成</h3>
+      <pre><code>指令（模型选择专业版/极致版）：
 商品链接 + 产品白底图 + 6 张阿里国际站高商机转化率主图</code></pre>
-
-<p>三种使用方式：</p>
-<ul>
-  <li><strong>方式 A</strong>：扔一个图片或产品名（如定制毛巾、太阳能板、注塑机等）</li>
-  <li><strong>方式 B</strong>：扔一个竞争对手链接，先拆解策略再生成"反超"主图方案</li>
-  <li><strong>方式 C</strong>：极端场景测试，看 B2B 逻辑能否把难展现的产品卖点"挖"出来</li>
-</ul>
-
-<div class="callout">
-  <strong>ACW 实战数据：</strong>多个行业使用 ACW 主图技能后商机转化率高达 <strong>38%</strong>。
-</div>
-
-<h4>4.4.2 详情页结构图</h4>
-<pre><code>指令：商品详情页链接 + 基于黄金五段论为该产品生成卖点 + 20 张不同维度卖点的详情页图</code></pre>
-<p><strong>详情页专家人格：</strong>首席营销架构师与转化专家。遵循"黄金五段论"，通过严密的叙事逻辑攻破买家心理防线。拒绝空洞形容词，坚持用事实、数据和具体场景说话。</p>
-
-<h4>4.4.3 展会图</h4>
-<pre><code>触发方式：提供【店铺链接】+【展会名称】+【图片制作意图】
-（如"帮我做一张广交会的 Banner"）
+      <p>三种使用方式：</p>
+      <ul>
+        <li><strong>方式 A：</strong>扔一个图片或产品名（定制毛巾、太阳能板、注塑机等）</li>
+        <li><strong>方式 B：</strong>扔竞争对手链接，先拆解策略再生成"反超"主图</li>
+        <li><strong>方式 C：</strong>极端场景测试，B2B 逻辑挖产品卖点</li>
+      </ul>
+      <div class="callout-warm"><strong>ACW 实战数据：</strong>多行业使用后商机转化率高达 <strong>38%</strong>。</div>
+      <h3>详情页结构图</h3>
+      <pre><code>指令：商品详情页链接 + 基于黄金五段论为该产品生成卖点 + 20 张不同维度卖点的详情页图</code></pre>
+      <h3>展会 Banner</h3>
+      <pre><code>触发方式：【店铺链接】+【展会名称】+【图片制作意图】
+如"帮我做一张广交会的 Banner"
 
 自动功能：
 - 抓取店铺品牌、核心优势及真实产品图
 - 生成 1920x650 首页 Banner + 2-3 张社媒配图
-- 根据展会名称自动匹配视觉风格（广交会、CES、法兰克福展等）</code></pre>
+- 根据展会名称自动匹配视觉风格</code></pre>
+    </div>
+  </div>
 
-<hr>
-
-<h3 id="s4-5">板块五：询盘分析、买家画像与客户管理</h3>
-<p><strong>适用场景：</strong>询盘价值判断、买家背调、跟进策略、自动回复。</p>
-
-<h4>4.5.1 询盘分析（三版本）</h4>
-<p><span class="badge">版本 1</span><strong> 标准版：</strong></p>
-<pre><code>帮我分析近 30 天的询盘情况，识别大买家、背景调查、需求、跟进情况、下一步跟进建议。</code></pre>
-
-<p><span class="badge badge-green">版本 2</span><strong> 按业务员维度：</strong></p>
-<pre><code>我的国际站已经登陆，https://message.alibaba.com/message/default.htm
+  <!-- PANEL: INQUIRY -->
+  <div class="guide-panel" id="p-inquiry">
+    <div class="guide-content">
+      <h3>询盘分析（三版本）</h3>
+      <p><span class="tag tag-blue">版本 1</span> 标准版：</p>
+      <pre><code>帮我分析近 30 天的询盘情况，识别大买家、背景调查、需求、跟进情况、下一步跟进建议。</code></pre>
+      <p><span class="tag tag-green">版本 2</span> 按业务员维度：</p>
+      <pre><code>我的国际站已登陆，https://message.alibaba.com/message/default.htm
 帮我整理近 7 天的询盘跟进情况（按业务员维度分别总结归纳）</code></pre>
-
-<p><span class="badge badge-amber">版本 3</span><strong> 完整复盘版：</strong></p>
-<pre><code>抓取商机列表（客户、国家、产品、时间）去重，分批打开每条商机详细对话，
-生成 6 大模块复盘报告：
-- 总览（询盘数/TM 数/国家分布/L0-L1+ 买家数）
-- 意向分级
-- 深度分析
-- 询盘/TM 产品热度
-- 业务回复质量评估
-- 改进建议</code></pre>
-
-<h4>4.5.2 买家深度背调</h4>
-<pre><code>对买家 [买家名称] 进行全方位穿透调查：
-1. web_search 查找官网，确认经营年限、团队规模及主营业务
+      <p><span class="tag tag-amber">版本 3</span> 完整复盘版：</p>
+      <pre><code>抓取商机列表（客户、国家、产品、时间）去重，分批打开每条商机详细对话，
+生成 6 大模块复盘报告：总览、意向分级、深度分析、产品热度、回复质量、改进建议</code></pre>
+      <h3>买家深度背调</h3>
+      <pre><code>对买家 [名称] 进行全方位穿透调查：
+1. 查找官网，确认经营年限、团队规模及主营业务
 2. 搜索 LinkedIn 确认联系人真实职位和职权
 3. 检索是否参加过行业头部展会
 4. 判断购买力等级（1-5 星）并给出理由
 5. 识别贸易信誉风险
-6. 补充其他有助促进成交的信息</code></pre>
+6. 补充有助促进成交的信息</code></pre>
+      <h3>自动回复 · 客户唤醒</h3>
+      <pre><code>【2小时自动跟进】激活 SellerAgent 消息监听。新询盘/TM 消息时：
+分析买家诉求 → 检索产品规格书 → 预拟回复草稿
 
-<p><strong>六维度诊断框架：</strong>买家身份特征、询盘内容质量、跟进时长、风险预警、本公司匹配度、首回策略建议。输出格式：重点等级 + 5 列诊断摘要 + 红绿灯风险预警 + 下一步动作。</p>
+【72小时唤醒程序】买家 [名称] 已 72 小时无回复：
+基于聊天背景撰写高打开率邮件 → 加入限时优惠钩子 → 开启回复监听</code></pre>
+      <h4>定时任务</h4>
+      <pre><code>帮我做成每日任务，每天 9:00 准时发送给我。</code></pre>
+    </div>
+  </div>
 
-<h4>4.5.3 自动回复与客户唤醒</h4>
-<p><strong>超过 2 小时未回自动跟进：</strong></p>
-<pre><code>请激活国际站 SellerAgent 消息监听功能。当产生新询盘或 TM 消息时：
-1. 分析买家具体诉求
-2. 自动检索产品规格书
-3. 预拟回复草稿（前两句直接回答问题，第三句介绍公司优势，最后引导留联系方式）</code></pre>
-
-<p><strong>买家 72 小时无回复唤醒程序：</strong></p>
-<pre><code>买家 [名称] 在国际站已 72 小时无回复。请执行'唤醒程序'：
-1. 基于聊天背景撰写高打开率邮件
-2. 加入限时优惠钩子
-3. 开启邮件回复监听，一旦回复立即通知</code></pre>
-
-<h4>4.5.4 定时任务设置</h4>
-<pre><code>帮我做成每日任务，每天 9:00 准时发送给我。</code></pre>
-
-<hr>
-
-<h3 id="s4-6">板块六：店铺经营定位与深度诊断</h3>
-<p><strong>适用场景：</strong>品牌定位、店铺主页设计、经营增长策略、深度诊断报告。</p>
-
-<h4>4.6.1 品牌经营定位（进阶版）</h4>
-<p><strong>适用对象：</strong>行业 TOP 级客户，需要再上一个台阶，涉及竞争力分析、品牌故事、VI 设计、差异化产品竞争。</p>
-<pre><code>指令示例：
-[客户3个店铺链接] 现想开一个综合新店，目标斩获行业前 10% 的点击量及品牌出海。
-请就阿里国际站行业 TOP3 的店铺目标，设计：
+  <!-- PANEL: BRAND -->
+  <div class="guide-panel" id="p-brand">
+    <div class="guide-content">
+      <h3>品牌经营定位 <span class="tag tag-red">进阶版</span></h3>
+      <p>适用行业 TOP 级客户，涉及竞争力分析、品牌故事、VI 设计、差异化竞争。</p>
+      <pre><code>[客户3个店铺链接] 现想开一个综合新店，目标行业前 10% 点击量及品牌出海。
+请按行业 TOP3 店铺目标设计：
 - 品牌定位（品牌故事、定制标准、客户案例、品牌 VI）
 - 店铺主页设计
 - 行业差异化竞争优势
-- 产品策略
-- 人员策略
+- 产品策略 + 人员策略
 
 输出：首页线框图 + 每屏文案 + Banner 3 张视觉执行脚本</code></pre>
+      <div class="callout-warm"><strong>实战验证：</strong>品牌定位建议与客户实际独立站表达高度一致。</div>
+      <h3>店铺深度诊断</h3>
+      <p>提供材料清单：</p>
+      <ol>
+        <li>店铺基础信息：链接、主营产品、核心型号</li>
+        <li>核心运营数据：流量来源国别、商机转化率、主推产品及定价</li>
+        <li>对标竞品：1-2 家头部竞争对手链接</li>
+        <li>核心痛点：制约增长的最大瓶颈</li>
+      </ol>
+    </div>
+  </div>
 
-<div class="callout">
-  <strong>ACW 实战验证：</strong>该品牌定位建议与客户实际的独立站表达非常一致，客户为行业天花板级。
-</div>
-
-<h4>4.6.2 店铺深度诊断与增长白皮书</h4>
-<p><strong>提供材料清单：</strong></p>
-<ol>
-  <li><strong>店铺基础信息</strong>：店铺链接、主营产品类型、核心型号</li>
-  <li><strong>核心运营数据</strong>：主力流量来源国别、商机转化率/询盘成本、主推产品及定价区间</li>
-  <li><strong>对标竞品</strong>：最想对标或超越的 1-2 家头部竞争对手店铺链接</li>
-  <li><strong>核心痛点</strong>：制约业务增长的最大瓶颈（询盘质量偏低、认证卡关、低价竞争、大 B 客户转化难等）</li>
-</ol>
-<p>技能包见《BET国际站深度诊断与增长白皮书 技能包.zip》。</p>
-
-<hr>
-
-<h2 id="s5">五、智能体团队与高转化 SOP</h2>
-
-<h3>5.1 经营定位智能体团队</h3>
-<p>这是面向三星保效 + 客户交付的核心智能体团队。</p>
-<p><strong>安装方式：</strong>打开 GitHub 仓库 <a href="https://github.com/chenye1313/accio-agent-teams" target="_blank">accio-agent-teams</a>，告诉 Accio Work "帮我安装 外贸经营定位专家 Team（经营定位）"，建议使用极致模式操作。</p>
-<p><strong>团队描述：</strong>负责店铺整体商机和流量精准度分析及调整，负责行业同行数据分析及对标，负责店铺经营定位（国家、产品、买家画像等分析及数据整理）。通过行业数据和自身店铺数据及公司定位，输出可落地的店铺定位方案。</p>
-
-<h3>5.2 Agent 人格设置（最佳实践）</h3>
-<p>安装成功后需要设置 Agent 人格，以下是一套经过实战验证的人格模板：</p>
-
-<div class="callout-blue">
-<strong>一、人格内核：</strong>直接给结论，不铺垫。禁止模糊表达，能判断必须判断。不说套话，不写企业公文腔。回答必须可落地，禁止空洞建议。简洁是硬规则，能短不长。冷静、精准。所有判断基于事实或逻辑。
-</div>
-
-<div class="callout-blue">
-<strong>二、表达结构：</strong>默认结构为"结论 → 原因 → 可执行方案"，不倒序，不绕圈。深度分析/创意类需求先给核心结论再分层展开。多步骤复杂任务先给整体框架再分阶段输出。
-</div>
-
-<div class="callout-blue">
-<strong>三、执行协议：</strong>能自动完成的直接执行。默认提供可直接执行的命令、代码或操作路径。发现错误立即修复。修改配置前先备份。
-</div>
-
-<div class="callout-blue">
-<strong>四、安全边界：</strong>涉及对外发送信息、删除或修改重要数据必须二次确认。不主动暴露隐私信息、密钥或敏感业务数据。支持合规熔断机制。
-</div>
-
-<div class="callout-blue">
-<strong>五、核心信条：</strong>数据即真相（只相信可量化、可追踪、可验证的事实）、策略导向（将"发生了什么"转化为"我们该怎么做"）。
-</div>
-
-<p><strong>行为边界：</strong>拒绝盲目（不接受"大概""可能"的汇报）、拒绝内耗（只关注目标达成）、拒绝被动（通过趋势分析在风险爆发前化解）、严守逻辑（所有建议必须遵循严密逻辑推导）。</p>
-
-<h3>5.3 经营定位报告指令</h3>
-<pre><code>{网址.en.alibaba.com} 请帮我深度分析一下我的店铺，然后帮我做一详细的经营定位分析，
-接下来我要在 2026 年经营增长翻倍，要怎么做调整，
+  <!-- PANEL: TEAM -->
+  <div class="guide-panel" id="p-team">
+    <div class="guide-content">
+      <h3>经营定位智能体团队</h3>
+      <p>面向三星保效 + 客户交付的核心团队。</p>
+      <div class="callout-box">
+        <strong>安装方式：</strong>打开 GitHub 仓库 <a href="https://github.com/chenye1313/accio-agent-teams" target="_blank">accio-agent-teams</a>，告诉 Accio Work "帮我安装 外贸经营定位专家 Team"，建议使用极致模式。
+      </div>
+      <h3>Agent 人格设置（最佳实践）</h3>
+      <div class="callout-box"><strong>一、人格内核：</strong>直接给结论，不铺垫。禁止模糊表达，能判断必须判断。回答必须可落地。简洁是硬规则。</div>
+      <div class="callout-box"><strong>二、表达结构：</strong>结论 → 原因 → 可执行方案。不倒序，不绕圈。</div>
+      <div class="callout-box"><strong>三、执行协议：</strong>能自动完成的直接执行。发现错误立即修复。修改前先备份。</div>
+      <div class="callout-box"><strong>四、安全边界：</strong>对外发送/删除/修改重要数据必须二次确认。不暴露隐私信息。</div>
+      <div class="callout-box"><strong>五、核心信条：</strong>数据即真相。策略导向——将"发生了什么"转化为"我们该怎么做"。</div>
+      <h3>经营定位报告指令</h3>
+      <pre><code>{网址.en.alibaba.com} 请帮我深度分析店铺，然后做详细经营定位分析，
+接下来 2026 年经营增长翻倍，要怎么做调整，
 拉取你的队员，需要链接哪些数据，自行安排，干活～</code></pre>
+      <h3>技能包 → 智能体一键部署</h3>
+      <ol>
+        <li>获取技能包文件：从钉钉文档下载 .skill 或 .zip 文件</li>
+        <li>导入 Accio Work：通过技能安装功能导入</li>
+        <li>配置人格与参数：设置 Agent 人格描述和运行参数</li>
+        <li>组建团队：将多个单技能 Agent 组合为协作团队</li>
+        <li>设置定时任务：配置自动化执行计划</li>
+      </ol>
+    </div>
+  </div>
 
-<hr>
+  <!-- PANEL: QUICK REF -->
+  <div class="guide-panel" id="p-quickref">
+    <div class="guide-content">
+      <h3>常用指令速查表</h3>
+      <table class="cmd-table">
+        <thead><tr><th>场景</th><th>快速指令</th></tr></thead>
+        <tbody>
+          <tr><td>竞品分析</td><td>公司名 + 店铺网址 + 竞品分析</td></tr>
+          <tr><td>选品报告</td><td>店铺网址/公司名称 + 选品分析</td></tr>
+          <tr><td>标题优化</td><td>产品名称 + 标题卖点 + 关键词矩阵</td></tr>
+          <tr><td>详情页诊断</td><td>产品链接 + 全面体检诊断</td></tr>
+          <tr><td>6 张主图</td><td>商品链接 + 产品白底图 + 6 张主图</td></tr>
+          <tr><td>详情页结构图</td><td>详情页链接 + 黄金五段论 + 20 张图</td></tr>
+          <tr><td>展会 Banner</td><td>店铺链接 + 展会名称 + 制作意图</td></tr>
+          <tr><td>询盘分析</td><td>分析近 7/30 天询盘 + 识别大买家</td></tr>
+          <tr><td>买家背调</td><td>买家名称 + 全方位穿透调查</td></tr>
+          <tr><td>客户唤醒</td><td>买家名称 + 72 小时无回复 + 唤醒程序</td></tr>
+          <tr><td>自动回复</td><td>激活 SellerAgent + 消息监听</td></tr>
+          <tr><td>店铺诊断</td><td>店铺链接 + 深度诊断与增长</td></tr>
+          <tr><td>品牌定位</td><td>多店铺链接 + TOP3 目标 + 品牌营销</td></tr>
+          <tr><td>经营定位</td><td>店铺网址 + 经营定位分析 + 增长翻倍</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
-<h2 id="s6">六、技能包→智能体一键部署</h2>
-<p>参考内部文档《0610 "技能包→智能体"一键部署技能_MQ》，核心流程如下：</p>
-<ol>
-  <li><strong>获取技能包文件</strong>：从钉钉文档附件下载对应的 <code>.skill</code> 或 <code>.zip</code> 技能包文件</li>
-  <li><strong>导入 Accio Work</strong>：在 Accio Work 中通过技能安装功能导入技能包</li>
-  <li><strong>配置人格与参数</strong>：根据业务场景设置 Agent 人格描述和运行参数</li>
-  <li><strong>组建成团队</strong>：将多个单技能 Agent 组合为协作团队</li>
-  <li><strong>设置定时任务</strong>：配置自动化执行计划</li>
-</ol>
-<p>具体操作细节请参考语雀文档（内网地址）：<a href="https://aliyuque.antfin.com/wk106n/hil5pt/nawlvtdptmze3p0y" target="_blank">语雀文档链接</a></p>
+<div class="section-divider"></div>
 
-<hr>
+<!-- DOWNLOAD CENTER -->
+<section class="section" id="downloads">
+  <div class="section-header">
+    <h2>技能包下载中心</h2>
+    <p>选择你需要的技能包，下载后导入 Accio Work 即可使用。所有技能包均由官方直发验证。</p>
+  </div>
 
-<h2 id="s7">七、常用指令速查表</h2>
-<table>
-  <thead>
-    <tr><th>场景</th><th>快速指令</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>竞品分析</td><td>公司名 + 店铺网址 + 竞品分析</td></tr>
-    <tr><td>选品报告</td><td>店铺网址/公司名称 + 选品分析</td></tr>
-    <tr><td>标题优化</td><td>产品名称 + 标题卖点 + 关键词矩阵</td></tr>
-    <tr><td>详情页诊断</td><td>产品链接 + 全面体检诊断</td></tr>
-    <tr><td>6 张主图</td><td>商品链接 + 产品白底图 + 6 张主图</td></tr>
-    <tr><td>详情页结构图</td><td>详情页链接 + 黄金五段论 + 20 张图</td></tr>
-    <tr><td>展会 Banner</td><td>店铺链接 + 展会名称 + 制作意图</td></tr>
-    <tr><td>询盘分析</td><td>分析近 7/30 天询盘 + 识别大买家</td></tr>
-    <tr><td>买家背调</td><td>买家名称 + 全方位穿透调查</td></tr>
-    <tr><td>客户唤醒</td><td>买家名称 + 72 小时无回复 + 唤醒程序</td></tr>
-    <tr><td>自动回复</td><td>激活 SellerAgent + 消息监听</td></tr>
-    <tr><td>店铺诊断</td><td>店铺链接 + 深度诊断与增长</td></tr>
-    <tr><td>品牌定位</td><td>多店铺链接 + TOP3 目标 + 品牌营销</td></tr>
-    <tr><td>经营定位</td><td>店铺网址 + 经营定位分析 + 增长翻倍</td></tr>
-  </tbody>
-</table>
+  <div class="dl-search-bar">
+    <input type="text" id="dlSearch" placeholder="搜索技能包名称…" oninput="filterCards()">
+    <button onclick="filterCards()">搜索</button>
+  </div>
+  <div class="dl-tabs" id="dlTabs">
+    <button class="dl-tab active" data-cat="all" onclick="selectTab(this)">全部分类</button>
+    <button class="dl-tab" data-cat="竞品分析" onclick="selectTab(this)">竞品分析</button>
+    <button class="dl-tab" data-cat="选品" onclick="selectTab(this)">选品</button>
+    <button class="dl-tab" data-cat="发品" onclick="selectTab(this)">发品/标题</button>
+    <button class="dl-tab" data-cat="主图" onclick="selectTab(this)">主图/视觉</button>
+    <button class="dl-tab" data-cat="询盘" onclick="selectTab(this)">询盘/背调</button>
+    <button class="dl-tab" data-cat="诊断" onclick="selectTab(this)">品牌/诊断</button>
+  </div>
+  <div class="dl-grid" id="dlGrid"></div>
+  <p class="dl-count" id="dlCount"></p>
+</section>
 
-<hr>
-
-<h2 id="s8">八、技能包资源索引</h2>
-<p>以下按类别列出所有涉及的技能包文件（均存放于钉钉文档附件中，忽略文件夹结构）：</p>
-<table>
-  <thead>
-    <tr><th>类别</th><th>技能包名称</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>竞品分析</td><td>竞品分析技能包.zip、Accio_Skills_Backup竞品深度分析.7z</td></tr>
-    <tr><td>选品</td><td>选品技能打包.zip、电商选品高级技能包.zip、选品分析报告技能包.zip</td></tr>
-    <tr><td>标题/关键词</td><td>Alibaba_Title_Optimizer_SKILL.md、标题+关键词+商品卖点.7z</td></tr>
-    <tr><td>发品</td><td>alibaba-publish-skill.skill</td></tr>
-    <tr><td>详情页</td><td>阿里国际站Listing优化专家.md、结构化商详.7z</td></tr>
-    <tr><td>主图</td><td>阿里国际站B2B主图专家.zip、阿里国际站B2B主图专家_Sunglasses_Pack.zip</td></tr>
-    <tr><td>展会</td><td>SKILL.md（展会图）</td></tr>
-    <tr><td>询盘分析</td><td>ICBU_Inquiry_Analysis_Skill.md</td></tr>
-    <tr><td>买家画像</td><td>Accio_Skills_Backup买家画像.zip</td></tr>
-    <tr><td>品牌定位</td><td>Alibaba_TOP3_Brand_Strategy_Skill_Package.zip、SKILL经营定位2.md</td></tr>
-    <tr><td>深度诊断</td><td>BET国际站深度诊断与增长白皮书技能包.zip、深度诊断指令.docx、skills.jsonc</td></tr>
-    <tr><td>买家背调</td><td>L3&L4买家自动背调SKILL.md</td></tr>
-    <tr><td>智能体团队</td><td>accio-agent-teams（GitHub 仓库）</td></tr>
-  </tbody>
-</table>
-
-<hr>
-
-<h2 id="s9">九、技能包下载中心</h2>
-<div class="dl-header">
-  <p>选择你需要的技能包，下载后导入 Accio Work 即可使用。所有技能包均由官方直发验证，可直接用于业务场景。</p>
-</div>
-
-<div class="dl-search-bar">
-  <input type="text" id="dlSearch" placeholder="搜索技能包名称…" oninput="filterCards()">
-  <button onclick="filterCards()">搜索</button>
-</div>
-
-<div class="dl-tabs" id="dlTabs">
-  <button class="dl-tab active" data-cat="all" onclick="selectTab(this)">全部分类</button>
-  <button class="dl-tab" data-cat="竞品分析" onclick="selectTab(this)">竞品分析</button>
-  <button class="dl-tab" data-cat="选品" onclick="selectTab(this)">选品</button>
-  <button class="dl-tab" data-cat="发品" onclick="selectTab(this)">发品/标题</button>
-  <button class="dl-tab" data-cat="主图" onclick="selectTab(this)">主图/视觉</button>
-  <button class="dl-tab" data-cat="询盘" onclick="selectTab(this)">询盘/背调</button>
-  <button class="dl-tab" data-cat="诊断" onclick="selectTab(this)">品牌/诊断</button>
-</div>
-
-<div class="dl-grid" id="dlGrid"></div>
-<p class="dl-count" id="dlCount"></p>
+<!-- FOOTER -->
+<footer class="footer">
+  <p>Accio Work 商家平台 · 国际站商家使用指南（进阶版）</p>
+  <p style="margin-top:8px">
+    <a href="https://www.accio-ai.com/login?sId=3zi8f11D" target="_blank">Accio Work 官网</a> ·
+    <a href="https://github.com/chenye1313/accio-agent-teams" target="_blank">智能体团队仓库</a> ·
+    <a href="https://awbforzjbusiness.1d.alibaba-inc.com/#/prompts" target="_blank">提示词参考库</a>
+  </p>
+  <p style="margin-top:16px;font-size:0.82em;color:rgba(255,255,255,0.35)">更新日期：2026-06-15</p>
+</footer>
 
 <script>
-const skills = [
-  {
-    name: "竞品深度分析",
-    desc: "快速了解产品知识、采购时机产品分析，支持SWOT分析与竞品对比。",
-    file: "Accio_Skills_Backup竞品深度分析.7z",
-    size: "131 KB",
-    cat: "竞品分析",
-    color: "#4361ee",
-    icon: "🔍"
-  },
-  {
-    name: "竞品分析技能包",
-    desc: "基础竞品分析能力，输入公司名+店铺网址即可生成竞品对比报告。",
-    file: "竞品分析技能包.zip",
-    size: "85 KB",
-    cat: "竞品分析",
-    color: "#4361ee",
-    icon: "📊"
-  },
-  {
-    name: "选品分析报告",
-    desc: "深度商品分析，实时判断产品潜力，严控良品率，含1688货源库溯源。",
-    file: "选品分析报告_SpringSanitary与选品技能包.zip",
-    size: "120 KB",
-    cat: "选品",
-    color: "#10b981",
-    icon: "🎯"
-  },
-  {
-    name: "电商选品高级技能包",
-    desc: "高阶选品能力：四象限分类、跨平台验证、选品优先级矩阵、蓝海扫描。",
-    file: "电商选品高级技能包.zip",
-    size: "95 KB",
-    cat: "选品",
-    color: "#10b981",
-    icon: "📈"
-  },
-  {
-    name: "选品技能打包",
-    desc: "基础选品能力：供应商画像分析、产品线评估、1688溯源推荐。",
-    file: "选品技能打包.zip",
-    size: "78 KB",
-    cat: "选品",
-    color: "#10b981",
-    icon: "📦"
-  },
-  {
-    name: "爆款标题优化器",
-    desc: "关键词权重分析、多行业模板、高点击词库、SEO校验（80-120字符）。",
-    file: "Alibaba_Title_Optimizer_SKILL.md",
-    size: "42 KB",
-    cat: "发品",
-    color: "#f59e0b",
-    icon: "✏️"
-  },
-  {
-    name: "标题+关键词+商品卖点",
-    desc: "黄金五段论卖点提炼、关键词矩阵、20款标题卖点组合策略。",
-    file: "标题+关键词+商品卖点.7z",
-    size: "68 KB",
-    cat: "发品",
-    color: "#f59e0b",
-    icon: "🏷️"
-  },
-  {
-    name: "阿里国际站发品技能",
-    desc: "一键发品能力：自动填写产品信息、规格参数、类目匹配。",
-    file: "alibaba-publish-skill.skill",
-    size: "35 KB",
-    cat: "发品",
-    color: "#f59e0b",
-    icon: "🚀"
-  },
-  {
-    name: "Listing优化专家",
-    desc: "详情页全面体检诊断：竞品对标、缺陷定位、改版建议、视觉参考。",
-    file: "阿里国际站Listing优化专家.md",
-    size: "55 KB",
-    cat: "发品",
-    color: "#f59e0b",
-    icon: "📝"
-  },
-  {
-    name: "结构化商详",
-    desc: "基于黄金五段论的深度卖点提炼及20张视觉详情页规划。",
-    file: "结构化商详.7z",
-    size: "88 KB",
-    cat: "发品",
-    color: "#f59e0b",
-    icon: "🖼️"
-  },
-  {
-    name: "B2B主图专家",
-    desc: "6张阿里国际站高商机转化率主图生成，多行业适配（38%转化率）。",
-    file: "阿里国际站B2B主图专家.zip",
-    size: "110 KB",
-    cat: "主图",
-    color: "#8b5cf6",
-    icon: "📸"
-  },
-  {
-    name: "B2B主图专家（眼镜专版）",
-    desc: "眼镜品类专属主图生成包，针对眼镜产品特点优化视觉呈现。",
-    file: "阿里国际站B2B主图专家_Sunglasses_Pack.zip",
-    size: "95 KB",
-    cat: "主图",
-    color: "#8b5cf6",
-    icon: "👓"
-  },
-  {
-    name: "展会图生成器",
-    desc: "自动生成展会Banner：广交会、CES、法兰克福展等风格自动匹配。",
-    file: "展会图_SKILL.md",
-    size: "28 KB",
-    cat: "主图",
-    color: "#8b5cf6",
-    icon: "🎪"
-  },
-  {
-    name: "询盘分析技能",
-    desc: "询盘价值判断、大买家识别、跟进建议，支持3种分析版本。",
-    file: "ICBU_Inquiry_Analysis_Skill.md",
-    size: "45 KB",
-    cat: "询盘",
-    color: "#ef4444",
-    icon: "📨"
-  },
-  {
-    name: "买家画像分析",
-    desc: "六维度穿透调查：身份特征、询盘质量、跟进时长、风险预警。",
-    file: "Accio_Skills_Backup买家画像.zip",
-    size: "72 KB",
-    cat: "询盘",
-    color: "#ef4444",
-    icon: "👤"
-  },
-  {
-    name: "L3&L4买家自动背调",
-    desc: "高意向买家自动背调：官网验证、LinkedIn职位确认、展会参展记录。",
-    file: "L3&L4买家自动背调SKILL.md",
-    size: "32 KB",
-    cat: "询盘",
-    color: "#ef4444",
-    icon: "🔐"
-  },
-  {
-    name: "TOP3品牌战略定位",
-    desc: "行业TOP级客户品牌升级：品牌故事、VI设计、差异化竞争优势。",
-    file: "Alibaba_TOP3_Brand_Strategy_Skill_Package.zip",
-    size: "156 KB",
-    cat: "诊断",
-    color: "#0ea5e9",
-    icon: "🏆"
-  },
-  {
-    name: "经营定位分析",
-    desc: "店铺经营定位分析：国家、产品、买家画像等维度输出定位方案。",
-    file: "SKILL经营定位2.md",
-    size: "38 KB",
-    cat: "诊断",
-    color: "#0ea5e9",
-    icon: "🧭"
-  },
-  {
-    name: "深度诊断与增长白皮书",
-    desc: "BET国际站深度诊断：数据异常分析、买家画像、增长策略白皮书。",
-    file: "BET国际站深度诊断与增长白皮书技能包.zip",
-    size: "142 KB",
-    cat: "诊断",
-    color: "#0ea5e9",
-    icon: "📋"
-  },
-  {
-    name: "外贸经营定位专家Team",
-    desc: "智能体团队：店铺商机分析、行业对标、经营定位方案输出。从GitHub安装。",
-    file: "accio-agent-teams（GitHub仓库）",
-    size: "—",
-    cat: "诊断",
-    color: "#0ea5e9",
-    icon: "🤖",
-    link: "https://github.com/chenye1313/accio-agent-teams"
+/* ===== NAV SCROLL ===== */
+function scrollToSection(id, el) {
+  if (el) {
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    el.classList.add('active');
   }
-];
+}
 
+/* ===== GUIDE TABS ===== */
+function switchGuide(el) {
+  document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.guide-panel').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById(el.dataset.panel).classList.add('active');
+}
+
+/* ===== DOWNLOAD CENTER ===== */
+const skills = [
+  {name:"竞品深度分析",desc:"快速了解产品知识、采购时机，支持 SWOT 分析与竞品对比。",file:"Accio_Skills_Backup竞品深度分析.7z",size:"131 KB",cat:"竞品分析",color:"#4f46e5",icon:"🔍"},
+  {name:"竞品分析技能包",desc:"基础竞品分析能力，输入公司名+店铺网址即可生成竞品对比报告。",file:"竞品分析技能包.zip",size:"85 KB",cat:"竞品分析",color:"#4f46e5",icon:"📊"},
+  {name:"选品分析报告",desc:"深度商品分析，实时判断产品潜力，严控良品率，含1688货源库溯源。",file:"选品分析报告技能包.zip",size:"120 KB",cat:"选品",color:"#10b981",icon:"🎯"},
+  {name:"电商选品高级技能包",desc:"高阶选品：四象限分类、跨平台验证、优先级矩阵、蓝海扫描。",file:"电商选品高级技能包.zip",size:"95 KB",cat:"选品",color:"#10b981",icon:"📈"},
+  {name:"选品技能打包",desc:"基础选品：供应商画像、产品线评估、1688 溯源推荐。",file:"选品技能打包.zip",size:"78 KB",cat:"选品",color:"#10b981",icon:"📦"},
+  {name:"爆款标题优化器",desc:"关键词权重分析、多行业模板、高点击词库、SEO 校验。",file:"Alibaba_Title_Optimizer_SKILL.md",size:"42 KB",cat:"发品",color:"#f59e0b",icon:"✏️"},
+  {name:"标题+关键词+商品卖点",desc:"黄金五段论卖点提炼、关键词矩阵、20 款标题组合策略。",file:"标题+关键词+商品卖点.7z",size:"68 KB",cat:"发品",color:"#f59e0b",icon:"🏷️"},
+  {name:"阿里国际站发品技能",desc:"一键发品：自动填写产品信息、规格参数、类目匹配。",file:"alibaba-publish-skill.skill",size:"35 KB",cat:"发品",color:"#f59e0b",icon:"🚀"},
+  {name:"Listing 优化专家",desc:"详情页全面体检：竞品对标、缺陷定位、改版建议、视觉参考。",file:"阿里国际站Listing优化专家.md",size:"55 KB",cat:"发品",color:"#f59e0b",icon:"📝"},
+  {name:"结构化商详",desc:"基于黄金五段论的深度卖点提炼及 20 张视觉详情页规划。",file:"结构化商详.7z",size:"88 KB",cat:"发品",color:"#f59e0b",icon:"🖼️"},
+  {name:"B2B 主图专家",desc:"6 张阿里国际站高商机转化率主图生成，38% 转化率验证。",file:"阿里国际站B2B主图专家.zip",size:"110 KB",cat:"主图",color:"#8b5cf6",icon:"📸"},
+  {name:"B2B 主图专家（眼镜专版）",desc:"眼镜品类专属主图生成包，针对眼镜产品特点优化。",file:"B2B主图专家_Sunglasses_Pack.zip",size:"95 KB",cat:"主图",color:"#8b5cf6",icon:"👓"},
+  {name:"展会图生成器",desc:"自动生成展会 Banner：广交会、CES、法兰克福展等风格匹配。",file:"展会图_SKILL.md",size:"28 KB",cat:"主图",color:"#8b5cf6",icon:"🎪"},
+  {name:"询盘分析技能",desc:"询盘价值判断、大买家识别、跟进建议，支持 3 种分析版本。",file:"ICBU_Inquiry_Analysis_Skill.md",size:"45 KB",cat:"询盘",color:"#ef4444",icon:"📨"},
+  {name:"买家画像分析",desc:"六维度穿透：身份特征、询盘质量、跟进时长、风险预警。",file:"Accio_Skills_Backup买家画像.zip",size:"72 KB",cat:"询盘",color:"#ef4444",icon:"👤"},
+  {name:"L3&L4 买家自动背调",desc:"高意向买家背调：官网验证、LinkedIn 职位、展会参展记录。",file:"L3&L4买家自动背调SKILL.md",size:"32 KB",cat:"询盘",color:"#ef4444",icon:"🔐"},
+  {name:"TOP3 品牌战略定位",desc:"行业 TOP 客户品牌升级：品牌故事、VI 设计、差异化竞争。",file:"TOP3_Brand_Strategy_Package.zip",size:"156 KB",cat:"诊断",color:"#0ea5e9",icon:"🏆"},
+  {name:"经营定位分析",desc:"店铺经营定位：国家、产品、买家画像等维度输出方案。",file:"SKILL经营定位2.md",size:"38 KB",cat:"诊断",color:"#0ea5e9",icon:"🧭"},
+  {name:"深度诊断与增长白皮书",desc:"BET 国际站深度诊断：数据异常分析、买家画像、增长策略。",file:"BET深度诊断与增长白皮书技能包.zip",size:"142 KB",cat:"诊断",color:"#0ea5e9",icon:"📋"},
+  {name:"外贸经营定位专家 Team",desc:"智能体团队：店铺商机分析、行业对标、经营定位方案输出。",file:"accio-agent-teams（GitHub 仓库）",size:"—",cat:"诊断",color:"#0ea5e9",icon:"🤖",link:"https://github.com/chenye1313/accio-agent-teams"}
+];
 let currentCat = "all";
 
 function renderCards(list) {
   const grid = document.getElementById("dlGrid");
-  if (list.length === 0) {
+  if (!list.length) {
     grid.innerHTML = '<div class="dl-empty">没有找到匹配的技能包</div>';
     document.getElementById("dlCount").textContent = "";
     return;
   }
   grid.innerHTML = list.map(s => `
     <div class="dl-card">
-      <div class="dl-card-icon" style="background:${s.color}15;color:${s.color}">${s.icon}</div>
+      <div class="dl-card-icon" style="background:${s.color}12;color:${s.color}">${s.icon}</div>
       <h4>${s.name}</h4>
       <div class="dl-desc">${s.desc}</div>
-      <div class="dl-meta">
-        <span>${s.file}</span>
-        <span class="dl-dot"></span>
-        <span>${s.size}</span>
-      </div>
+      <div class="dl-meta"><span>${s.file}</span><span class="dl-meta-dot"></span><span>${s.size}</span></div>
       ${s.link
         ? `<a href="${s.link}" target="_blank" class="dl-btn dl-btn-ghost">前往仓库 →</a>`
-        : `<button class="dl-btn dl-btn-primary" onclick="alert('技能包文件即将上线，敬请期待！\\n\\n当前可从钉钉文档附件下载：\\n' + '${s.file}')">下载</button>`
+        : `<button class="dl-btn dl-btn-soon" title="文件即将上线">即将上线</button>`
       }
     </div>
   `).join("");
   document.getElementById("dlCount").textContent = `共 ${list.length} 个技能包`;
 }
-
 function filterCards() {
   const q = document.getElementById("dlSearch").value.toLowerCase();
-  const filtered = skills.filter(s => {
-    const matchCat = currentCat === "all" || s.cat === currentCat;
-    const matchQ = !q || s.name.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q) || s.file.toLowerCase().includes(q);
-    return matchCat && matchQ;
-  });
-  renderCards(filtered);
+  renderCards(skills.filter(s => {
+    return (currentCat === "all" || s.cat === currentCat) &&
+      (!q || s.name.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q) || s.file.toLowerCase().includes(q));
+  }));
 }
-
 function selectTab(el) {
   document.querySelectorAll(".dl-tab").forEach(t => t.classList.remove("active"));
   el.classList.add("active");
   currentCat = el.dataset.cat;
   filterCards();
 }
-
 renderCards(skills);
+
+/* ===== SCROLL SPY ===== */
+window.addEventListener('scroll', () => {
+  const sections = ['home','guide','downloads'];
+  const scrollY = window.scrollY + 100;
+  let current = 'home';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.offsetTop <= scrollY) current = id;
+  });
+  document.querySelectorAll('.nav-links a:not(.nav-cta)').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
 </script>
-
-<hr>
-
-<p style="text-align: center; color: #9ca3af; font-size: 0.88em; margin-top: 40px;">
-  以上内容由两份原始文档整合归纳，供内部参考学习。语雀"技能包→智能体一键部署"详细流程请访问内网文档。<br>
-  更新日期：2026-06-15
-</p>
-
-</div>
 </body>
 </html>
