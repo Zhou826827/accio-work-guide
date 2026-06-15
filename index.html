@@ -186,6 +186,87 @@
   .badge-green { background: #10b981; }
   .badge-amber { background: #f59e0b; }
   .badge-red { background: #ef4444; }
+
+  /* ===== Download Center ===== */
+  .dl-header { text-align: center; margin-bottom: 32px; }
+  .dl-header h2 { border: none; display: inline-block; font-size: 1.6em; margin-bottom: 8px; }
+  .dl-header p { color: #6b7280; font-size: 0.95em; max-width: 640px; margin: 0 auto; }
+  .dl-search-bar {
+    display: flex; gap: 8px; margin-bottom: 20px;
+  }
+  .dl-search-bar input {
+    flex: 1; padding: 10px 16px; border: 2px solid #e5e7eb; border-radius: 8px;
+    font-size: 0.95em; outline: none; transition: border-color 0.2s;
+    font-family: inherit;
+  }
+  .dl-search-bar input:focus { border-color: #4361ee; }
+  .dl-search-bar button {
+    padding: 10px 24px; background: #4361ee; color: #fff; border: none;
+    border-radius: 8px; font-size: 0.95em; font-weight: 600; cursor: pointer;
+    transition: background 0.2s; font-family: inherit;
+  }
+  .dl-search-bar button:hover { background: #3651d4; }
+  .dl-tabs {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px;
+  }
+  .dl-tab {
+    padding: 6px 16px; border-radius: 20px; border: 1.5px solid #d1d5db;
+    background: #fff; color: #4b5563; font-size: 0.85em; font-weight: 500;
+    cursor: pointer; transition: all 0.2s; font-family: inherit;
+  }
+  .dl-tab:hover { border-color: #4361ee; color: #4361ee; }
+  .dl-tab.active { background: #4361ee; color: #fff; border-color: #4361ee; }
+  .dl-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  }
+  @media (max-width: 768px) {
+    .dl-grid { grid-template-columns: 1fr; }
+  }
+  .dl-card {
+    background: #fff; border: 1.5px solid #e5e7eb; border-radius: 12px;
+    padding: 24px; transition: all 0.25s; position: relative; overflow: hidden;
+  }
+  .dl-card:hover {
+    border-color: #4361ee; box-shadow: 0 4px 20px rgba(67,97,238,0.12);
+    transform: translateY(-2px);
+  }
+  .dl-card-icon {
+    width: 44px; height: 44px; border-radius: 10px; display: flex;
+    align-items: center; justify-content: center; font-size: 1.3em;
+    margin-bottom: 14px;
+  }
+  .dl-card h4 {
+    margin: 0 0 8px; font-size: 1em; font-weight: 700; color: #0f1b4c;
+  }
+  .dl-card .dl-desc {
+    font-size: 0.85em; color: #6b7280; line-height: 1.6; margin-bottom: 16px;
+    min-height: 54px;
+  }
+  .dl-card .dl-meta {
+    font-size: 0.78em; color: #9ca3af; margin-bottom: 14px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .dl-card .dl-meta .dl-dot { width: 4px; height: 4px; border-radius: 50%; background: #d1d5db; }
+  .dl-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 20px; border-radius: 8px; font-size: 0.85em;
+    font-weight: 600; cursor: pointer; transition: all 0.2s;
+    border: none; font-family: inherit;
+  }
+  .dl-btn-primary { background: #4361ee; color: #fff; }
+  .dl-btn-primary:hover { background: #3651d4; }
+  .dl-btn-ghost {
+    background: #f0f4ff; color: #4361ee; border: 1.5px solid #4361ee;
+  }
+  .dl-btn-ghost:hover { background: #4361ee; color: #fff; }
+  .dl-empty {
+    text-align: center; padding: 48px; color: #9ca3af; font-size: 0.95em;
+    grid-column: 1 / -1;
+  }
+  .dl-count {
+    text-align: center; color: #9ca3af; font-size: 0.82em; margin-top: 20px;
+  }
+
   @media print {
     body { background: #fff; }
     .container { box-shadow: none; padding: 24px; }
@@ -234,6 +315,7 @@
   <li><a href="#s6">六、技能包→智能体一键部署</a></li>
   <li><a href="#s7">七、常用指令速查表</a></li>
   <li><a href="#s8">八、技能包资源索引</a></li>
+  <li><a href="#s9">九、技能包下载中心</a></li>
 </ul>
 </div>
 
@@ -628,6 +710,264 @@
     <tr><td>智能体团队</td><td>accio-agent-teams（GitHub 仓库）</td></tr>
   </tbody>
 </table>
+
+<hr>
+
+<h2 id="s9">九、技能包下载中心</h2>
+<div class="dl-header">
+  <p>选择你需要的技能包，下载后导入 Accio Work 即可使用。所有技能包均由官方直发验证，可直接用于业务场景。</p>
+</div>
+
+<div class="dl-search-bar">
+  <input type="text" id="dlSearch" placeholder="搜索技能包名称…" oninput="filterCards()">
+  <button onclick="filterCards()">搜索</button>
+</div>
+
+<div class="dl-tabs" id="dlTabs">
+  <button class="dl-tab active" data-cat="all" onclick="selectTab(this)">全部分类</button>
+  <button class="dl-tab" data-cat="竞品分析" onclick="selectTab(this)">竞品分析</button>
+  <button class="dl-tab" data-cat="选品" onclick="selectTab(this)">选品</button>
+  <button class="dl-tab" data-cat="发品" onclick="selectTab(this)">发品/标题</button>
+  <button class="dl-tab" data-cat="主图" onclick="selectTab(this)">主图/视觉</button>
+  <button class="dl-tab" data-cat="询盘" onclick="selectTab(this)">询盘/背调</button>
+  <button class="dl-tab" data-cat="诊断" onclick="selectTab(this)">品牌/诊断</button>
+</div>
+
+<div class="dl-grid" id="dlGrid"></div>
+<p class="dl-count" id="dlCount"></p>
+
+<script>
+const skills = [
+  {
+    name: "竞品深度分析",
+    desc: "快速了解产品知识、采购时机产品分析，支持SWOT分析与竞品对比。",
+    file: "Accio_Skills_Backup竞品深度分析.7z",
+    size: "131 KB",
+    cat: "竞品分析",
+    color: "#4361ee",
+    icon: "🔍"
+  },
+  {
+    name: "竞品分析技能包",
+    desc: "基础竞品分析能力，输入公司名+店铺网址即可生成竞品对比报告。",
+    file: "竞品分析技能包.zip",
+    size: "85 KB",
+    cat: "竞品分析",
+    color: "#4361ee",
+    icon: "📊"
+  },
+  {
+    name: "选品分析报告",
+    desc: "深度商品分析，实时判断产品潜力，严控良品率，含1688货源库溯源。",
+    file: "选品分析报告_SpringSanitary与选品技能包.zip",
+    size: "120 KB",
+    cat: "选品",
+    color: "#10b981",
+    icon: "🎯"
+  },
+  {
+    name: "电商选品高级技能包",
+    desc: "高阶选品能力：四象限分类、跨平台验证、选品优先级矩阵、蓝海扫描。",
+    file: "电商选品高级技能包.zip",
+    size: "95 KB",
+    cat: "选品",
+    color: "#10b981",
+    icon: "📈"
+  },
+  {
+    name: "选品技能打包",
+    desc: "基础选品能力：供应商画像分析、产品线评估、1688溯源推荐。",
+    file: "选品技能打包.zip",
+    size: "78 KB",
+    cat: "选品",
+    color: "#10b981",
+    icon: "📦"
+  },
+  {
+    name: "爆款标题优化器",
+    desc: "关键词权重分析、多行业模板、高点击词库、SEO校验（80-120字符）。",
+    file: "Alibaba_Title_Optimizer_SKILL.md",
+    size: "42 KB",
+    cat: "发品",
+    color: "#f59e0b",
+    icon: "✏️"
+  },
+  {
+    name: "标题+关键词+商品卖点",
+    desc: "黄金五段论卖点提炼、关键词矩阵、20款标题卖点组合策略。",
+    file: "标题+关键词+商品卖点.7z",
+    size: "68 KB",
+    cat: "发品",
+    color: "#f59e0b",
+    icon: "🏷️"
+  },
+  {
+    name: "阿里国际站发品技能",
+    desc: "一键发品能力：自动填写产品信息、规格参数、类目匹配。",
+    file: "alibaba-publish-skill.skill",
+    size: "35 KB",
+    cat: "发品",
+    color: "#f59e0b",
+    icon: "🚀"
+  },
+  {
+    name: "Listing优化专家",
+    desc: "详情页全面体检诊断：竞品对标、缺陷定位、改版建议、视觉参考。",
+    file: "阿里国际站Listing优化专家.md",
+    size: "55 KB",
+    cat: "发品",
+    color: "#f59e0b",
+    icon: "📝"
+  },
+  {
+    name: "结构化商详",
+    desc: "基于黄金五段论的深度卖点提炼及20张视觉详情页规划。",
+    file: "结构化商详.7z",
+    size: "88 KB",
+    cat: "发品",
+    color: "#f59e0b",
+    icon: "🖼️"
+  },
+  {
+    name: "B2B主图专家",
+    desc: "6张阿里国际站高商机转化率主图生成，多行业适配（38%转化率）。",
+    file: "阿里国际站B2B主图专家.zip",
+    size: "110 KB",
+    cat: "主图",
+    color: "#8b5cf6",
+    icon: "📸"
+  },
+  {
+    name: "B2B主图专家（眼镜专版）",
+    desc: "眼镜品类专属主图生成包，针对眼镜产品特点优化视觉呈现。",
+    file: "阿里国际站B2B主图专家_Sunglasses_Pack.zip",
+    size: "95 KB",
+    cat: "主图",
+    color: "#8b5cf6",
+    icon: "👓"
+  },
+  {
+    name: "展会图生成器",
+    desc: "自动生成展会Banner：广交会、CES、法兰克福展等风格自动匹配。",
+    file: "展会图_SKILL.md",
+    size: "28 KB",
+    cat: "主图",
+    color: "#8b5cf6",
+    icon: "🎪"
+  },
+  {
+    name: "询盘分析技能",
+    desc: "询盘价值判断、大买家识别、跟进建议，支持3种分析版本。",
+    file: "ICBU_Inquiry_Analysis_Skill.md",
+    size: "45 KB",
+    cat: "询盘",
+    color: "#ef4444",
+    icon: "📨"
+  },
+  {
+    name: "买家画像分析",
+    desc: "六维度穿透调查：身份特征、询盘质量、跟进时长、风险预警。",
+    file: "Accio_Skills_Backup买家画像.zip",
+    size: "72 KB",
+    cat: "询盘",
+    color: "#ef4444",
+    icon: "👤"
+  },
+  {
+    name: "L3&L4买家自动背调",
+    desc: "高意向买家自动背调：官网验证、LinkedIn职位确认、展会参展记录。",
+    file: "L3&L4买家自动背调SKILL.md",
+    size: "32 KB",
+    cat: "询盘",
+    color: "#ef4444",
+    icon: "🔐"
+  },
+  {
+    name: "TOP3品牌战略定位",
+    desc: "行业TOP级客户品牌升级：品牌故事、VI设计、差异化竞争优势。",
+    file: "Alibaba_TOP3_Brand_Strategy_Skill_Package.zip",
+    size: "156 KB",
+    cat: "诊断",
+    color: "#0ea5e9",
+    icon: "🏆"
+  },
+  {
+    name: "经营定位分析",
+    desc: "店铺经营定位分析：国家、产品、买家画像等维度输出定位方案。",
+    file: "SKILL经营定位2.md",
+    size: "38 KB",
+    cat: "诊断",
+    color: "#0ea5e9",
+    icon: "🧭"
+  },
+  {
+    name: "深度诊断与增长白皮书",
+    desc: "BET国际站深度诊断：数据异常分析、买家画像、增长策略白皮书。",
+    file: "BET国际站深度诊断与增长白皮书技能包.zip",
+    size: "142 KB",
+    cat: "诊断",
+    color: "#0ea5e9",
+    icon: "📋"
+  },
+  {
+    name: "外贸经营定位专家Team",
+    desc: "智能体团队：店铺商机分析、行业对标、经营定位方案输出。从GitHub安装。",
+    file: "accio-agent-teams（GitHub仓库）",
+    size: "—",
+    cat: "诊断",
+    color: "#0ea5e9",
+    icon: "🤖",
+    link: "https://github.com/chenye1313/accio-agent-teams"
+  }
+];
+
+let currentCat = "all";
+
+function renderCards(list) {
+  const grid = document.getElementById("dlGrid");
+  if (list.length === 0) {
+    grid.innerHTML = '<div class="dl-empty">没有找到匹配的技能包</div>';
+    document.getElementById("dlCount").textContent = "";
+    return;
+  }
+  grid.innerHTML = list.map(s => `
+    <div class="dl-card">
+      <div class="dl-card-icon" style="background:${s.color}15;color:${s.color}">${s.icon}</div>
+      <h4>${s.name}</h4>
+      <div class="dl-desc">${s.desc}</div>
+      <div class="dl-meta">
+        <span>${s.file}</span>
+        <span class="dl-dot"></span>
+        <span>${s.size}</span>
+      </div>
+      ${s.link
+        ? `<a href="${s.link}" target="_blank" class="dl-btn dl-btn-ghost">前往仓库 →</a>`
+        : `<button class="dl-btn dl-btn-primary" onclick="alert('技能包文件即将上线，敬请期待！\\n\\n当前可从钉钉文档附件下载：\\n' + '${s.file}')">下载</button>`
+      }
+    </div>
+  `).join("");
+  document.getElementById("dlCount").textContent = `共 ${list.length} 个技能包`;
+}
+
+function filterCards() {
+  const q = document.getElementById("dlSearch").value.toLowerCase();
+  const filtered = skills.filter(s => {
+    const matchCat = currentCat === "all" || s.cat === currentCat;
+    const matchQ = !q || s.name.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q) || s.file.toLowerCase().includes(q);
+    return matchCat && matchQ;
+  });
+  renderCards(filtered);
+}
+
+function selectTab(el) {
+  document.querySelectorAll(".dl-tab").forEach(t => t.classList.remove("active"));
+  el.classList.add("active");
+  currentCat = el.dataset.cat;
+  filterCards();
+}
+
+renderCards(skills);
+</script>
 
 <hr>
 
