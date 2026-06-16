@@ -376,6 +376,11 @@ body {
       <h3>开放 Skills 生态</h3>
       <p>将独特商业流程封装成"技能"分享，能力库随全球用户使用不断扩充。</p>
     </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#ede9fe;color:#7c3aed">🎨</div>
+      <h3>CID 图设计渲染</h3>
+      <p>游乐设备行业一键出图：CAD 技术图纸 + 3D 渲染效果图，滑梯/攀岩/蹦床/淘气堡全覆盖。</p>
+    </div>
   </div>
 </section>
 
@@ -536,6 +541,27 @@ body {
 - 抓取店铺品牌、核心优势及真实产品图
 - 生成 1920x650 首页 Banner + 2-3 张社媒配图
 - 根据展会名称自动匹配视觉风格</code></pre>
+      <h3>CID 图设计与渲染 <span class="tag tag-purple" style="background:#8b5cf620;color:#8b5cf6">游乐设备专版</span></h3>
+      <p>专为游乐设备行业打造的 CID（产品效果图）设计与渲染技能，覆盖户外组合滑梯、攀岩墙、蹦床公园、秋千、摇摇乐、室内淘气堡等细分赛道，一键生成 CAD 技术图纸和 3D 渲染效果图。</p>
+      <p><strong>输入参数：</strong>产品名称与类型、整体尺寸（长×宽×高）、主要材质、功能模块、颜色方案、目标场景、输出需求。</p>
+      <pre><code>触发词：生成CAD图 / 3D渲染 / 技术图纸 / 工程图 / 效果图 / CID图
+
+示例指令：帮我生成一个户外组合滑梯的 CAD 图和 3D 效果图
+→ 尺寸 12×8×6 米，3 组滑梯、2 个攀爬区、1 个秋千
+→ 镀锌钢管 + LLDPE，蓝黄配色，安装在社区公园，全套 6 张图</code></pre>
+      <p><strong>输出内容（6 张图）：</strong></p>
+      <ul>
+        <li><strong>CAD 技术图纸（3 张）：</strong>总装平面图（俯视）、正视图/侧视图、细节放大图（连接节点/安全区域）</li>
+        <li><strong>3D 渲染效果图（3 张）：</strong>主视觉 Hero Shot（45° 商业展示级）、场景应用图（实景安装效果）、多角度展示图（2×2 网格四视角）</li>
+      </ul>
+      <p><strong>适用材质：</strong>镀锌钢管、LLDPE 工程塑料、304 不锈钢、实木、玻璃钢、PVC 软包——技能自动匹配英文 prompt 中的材质质感描述。</p>
+      <p><strong>安全标准参考：</strong>EN1176（欧洲）、ASTM F1487（美国）、GB/T 27689（中国），根据目标市场自动选用。</p>
+      <div class="callout-warm"><strong>安全提示：</strong>AI 生成的图纸为效果展示图，不可替代专业工程师的施工图纸。承重结构、安全间距等关键参数需以专业计算为准，实际生产前必须进行结构安全评估。</div>
+      <p><strong>对话演示案例：</strong></p>
+      <ul>
+        <li><a href="https://www.accio.com/work/share/B0UTbmzTlo1S" target="_blank" style="color:#8b5cf6;font-weight:600">案例 1 — CID 绘图实操演示</a></li>
+        <li><a href="https://www.accio-ai.com/work/share/Pli0e3Y3JsNY" target="_blank" style="color:#8b5cf6;font-weight:600">案例 2 — CID 渲染效果展示</a></li>
+      </ul>
     </div>
   </div>
 
@@ -638,6 +664,7 @@ body {
           <tr><td>6 张主图</td><td>商品链接 + 产品白底图 + 6 张主图</td></tr>
           <tr><td>详情页结构图</td><td>详情页链接 + 黄金五段论 + 20 张图</td></tr>
           <tr><td>展会 Banner</td><td>店铺链接 + 展会名称 + 制作意图</td></tr>
+          <tr><td>CID 技术图纸</td><td>产品类型 + 尺寸 + 材质 + 生成 CAD 图 + 3D 渲染</td></tr>
           <tr><td>询盘分析</td><td>分析近 7/30 天询盘 + 识别大买家</td></tr>
           <tr><td>买家背调</td><td>买家名称 + 全方位穿透调查</td></tr>
           <tr><td>客户唤醒</td><td>买家名称 + 72 小时无回复 + 唤醒程序</td></tr>
@@ -715,7 +742,7 @@ const skills = [
   {name:"标题+关键词+商品卖点",desc:"黄金五段论卖点提炼、关键词矩阵、20 款标题组合策略。",file:"title-keyword-selling-points.7z",size:"35 KB",cat:"发品",color:"#f59e0b",icon:"🏷️"},
   {name:"结构化详情页专家",desc:"基于黄金五段论的深度卖点提炼及 20 张视觉详情页规划。",file:"structured-detail-page.7z",size:"2 KB",cat:"发品",color:"#f59e0b",icon:"🖼️"},
   {name:"B2B 主图专家（眼镜专版）",desc:"眼镜品类专属主图生成包，针对眼镜产品特点优化视觉呈现。",file:"b2b-main-image-sunglasses.zip",size:"7 MB",cat:"主图",color:"#8b5cf6",icon:"👓"},
-  {name:"CID 图设计渲染",desc:"CID 图设计渲染技能包，支持产品视觉设计与效果渲染。",file:"cid-design-rendering.zip",size:"302 KB",cat:"主图",color:"#8b5cf6",icon:"🎨"},
+  {name:"CID 图设计渲染",desc:"游乐设备行业 CID 设计与渲染专家：CAD 技术图纸（平面图、正视图、细节图）+ 3D 渲染效果图（主视觉、场景应用、多角度），覆盖滑梯、攀岩墙、蹦床公园、淘气堡等品类。",file:"cid-design-rendering.zip",size:"302 KB",cat:"主图",color:"#8b5cf6",icon:"🎨",demos:[{label:"案例1",url:"https://www.accio.com/work/share/B0UTbmzTlo1S"},{label:"案例2",url:"https://www.accio-ai.com/work/share/Pli0e3Y3JsNY"}]},
   {name:"RFQ 狙击手",desc:"RFQ 快速响应技能，自动分析买家需求并生成高质量报价方案。",file:"rfq-skill.md",size:"23 KB",cat:"询盘",color:"#ef4444",icon:"📨"},
   {name:"RFQ Scanner",desc:"RFQ 扫描器，自动筛选高质量商机并生成优先跟进建议。",file:"rfq-scanner.zip",size:"187 KB",cat:"询盘",color:"#ef4444",icon:"🔎"},
   {name:"高端转化 SOP",desc:"高端客户转化标准操作流程，从询盘到成交的全链路策略。",file:"high-end-conversion-sop.zip",size:"8 KB",cat:"询盘",color:"#ef4444",icon:"🤝"},
@@ -737,6 +764,7 @@ function renderCards(list) {
       <div class="dl-card-icon" style="background:${s.color}12;color:${s.color}">${s.icon}</div>
       <h4>${s.name}</h4>
       <div class="dl-desc">${s.desc}</div>
+      ${s.demos ? `<div style="margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap">${s.demos.map(d => `<a href="${d.url}" target="_blank" style="font-size:0.78em;color:#4f46e5;text-decoration:none;font-weight:600;padding:3px 10px;border-radius:6px;background:#eef2ff;border:1px solid #c7d2fe;transition:all 0.2s" onmouseover="this.style.background='#4f46e5';this.style.color='#fff'" onmouseout="this.style.background='#eef2ff';this.style.color='#4f46e5'">▶ ${d.label}</a>`).join("")}</div>` : ""}
       <div class="dl-meta"><span>${s.file}</span><span class="dl-meta-dot"></span><span>${s.size}</span></div>
       ${s.link
         ? `<a href="${s.link}" target="_blank" class="dl-btn dl-btn-ghost">前往仓库 →</a>`
