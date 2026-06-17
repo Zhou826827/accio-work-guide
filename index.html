@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Accio Work 商品平台使用指南</title>
+<title>Accio Work 商家实操使用指南</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -310,7 +310,7 @@ body {
 <nav class="navbar">
   <div class="nav-logo">
     <svg viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="7" fill="#4f46e5"/><path d="M8 20l6-14 6 14" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 16h8" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
-    Accio Work 商品平台使用指南
+    Accio Work 商家实操使用指南
   </div>
   <div class="nav-links">
     <a href="#home" class="active" onclick="scrollToSection('home',this)">首页</a>
@@ -401,6 +401,7 @@ body {
     <button class="guide-tab" data-panel="p-product" onclick="switchGuide(this)">选品 · 发品</button>
     <button class="guide-tab" data-panel="p-visual" onclick="switchGuide(this)">主图 · 视觉</button>
     <button class="guide-tab" data-panel="p-inquiry" onclick="switchGuide(this)">询盘 · 背调</button>
+    <button class="guide-tab" data-panel="p-traffic" onclick="switchGuide(this)">流量 · 诊断</button>
     <button class="guide-tab" data-panel="p-brand" onclick="switchGuide(this)">经营定位</button>
     <button class="guide-tab" data-panel="p-team" onclick="switchGuide(this)">团队 · SOP</button>
     <button class="guide-tab" data-panel="p-enterprise" onclick="switchGuide(this)" style="color:#e85d04;font-weight:700">企业版团队 ⭐</button>
@@ -661,6 +662,37 @@ body {
     </div>
   </div>
 
+  <!-- PANEL: TRAFFIC -->
+  <div class="guide-panel" id="p-traffic">
+    <div class="guide-content">
+      <h3>流量诊断优化</h3>
+      <p>商机转化率分析 + 标题关键词商品卖点，从流量获取到内容转化的全链路优化。</p>
+
+      <h3>4.7.1 商机转化率分析 <span class="tag tag-blue">NEW</span></h3>
+      <p>深度分析市场与竞争环境，通过数据驱动洞察优化商机转化率。核心能力包括：</p>
+      <ul>
+        <li><strong>市场与竞争环境分析：</strong>利用 Exa & Excerpt 技术获取产业信息、流量来源、营销策略和品牌核心竞争力</li>
+        <li><strong>行业数据分析：</strong>分析 Amazon、Alibaba.com 及 TikTok 等平台数据，识别市场趋势和竞争格局</li>
+        <li><strong>竞争格局评估：</strong>运用压力测试模型评估竞争对手，优化产品定位与入口选择</li>
+        <li><strong>电商能力提升：</strong>Landing 页面优化、广告投放策略、评论管理（VOC）、详情页优化</li>
+        <li><strong>内容与自动化：</strong>多语言内容审核与编辑、AI 智能审核、自动化建模与协同任务执行</li>
+      </ul>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+        <a href="https://www.accio-ai.com/work/share/GYpN0AghapZN" target="_blank" style="font-size:0.88em;color:#06b6d4;text-decoration:none;font-weight:600;padding:5px 14px;border-radius:8px;background:#ecfeff;border:1px solid #a5f3fc;transition:all 0.2s" onmouseover="this.style.background='#06b6d4';this.style.color='#fff'" onmouseout="this.style.background='#ecfeff';this.style.color='#06b6d4'">▶ 商机转化率分析案例</a>
+      </div>
+
+      <h3 style="margin-top:28px">4.7.2 标题 · 关键词 · 商品卖点 <span class="tag tag-blue">NEW</span></h3>
+      <p>只需提供产品名称，一键生成完整的 SEO 标题策略和商品卖点体系。</p>
+      <pre><code>指令：产品名称（如"按摩筋膜枪"或"生活包袋-购物袋"）
+→ 生成：20 款标题卖点 + 标题卖点矩阵 + 关键词矩阵 + 首战策略 + Listing 矩阵
+
+合规规范：严格按 128 字符限额、5 段式卖点结构及平台合规规范，交付完整 Excel 文件。</code></pre>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+        <a href="https://www.accio-ai.com/work/share/jdWYeQX7mHMI" target="_blank" style="font-size:0.88em;color:#10b981;text-decoration:none;font-weight:600;padding:5px 14px;border-radius:8px;background:#ecfdf5;border:1px solid #a7f3d0;transition:all 0.2s" onmouseover="this.style.background='#10b981';this.style.color='#fff'" onmouseout="this.style.background='#ecfdf5';this.style.color='#10b981'">▶ 标题关键词卖点案例</a>
+      </div>
+    </div>
+  </div>
+
   <!-- PANEL: BRAND -->
   <div class="guide-panel" id="p-brand">
     <div class="guide-content">
@@ -804,6 +836,8 @@ body {
           <tr><td>买家背调</td><td>买家名称 + 全方位穿透调查</td></tr>
           <tr><td>客户唤醒</td><td>买家名称 + 72 小时无回复 + 唤醒程序</td></tr>
           <tr><td>高转化 SOP</td><td>贴出聊天记录 / 回答客户类型+沉默节点+目前状态</td></tr>
+          <tr><td>商机转化率分析</td><td>店铺链接 + 深度分析市场与竞争环境</td></tr>
+          <tr><td>标题关键词卖点</td><td>产品名称 + 20 款标题 + 关键词矩阵 + Listing 矩阵</td></tr>
           <tr><td>自动回复</td><td>激活 SellerAgent + 消息监听</td></tr>
           <tr><td>店铺诊断</td><td>店铺链接 + 深度诊断与增长</td></tr>
           <tr><td>品牌定位</td><td>多店铺链接 + TOP3 目标 + 品牌营销</td></tr>
@@ -834,6 +868,7 @@ body {
     <button class="dl-tab" data-cat="发品" onclick="selectTab(this)">发品/标题</button>
     <button class="dl-tab" data-cat="主图" onclick="selectTab(this)">主图/视觉</button>
     <button class="dl-tab" data-cat="询盘" onclick="selectTab(this)">询盘/背调</button>
+    <button class="dl-tab" data-cat="流量" onclick="selectTab(this)">流量/诊断</button>
     <button class="dl-tab" data-cat="诊断" onclick="selectTab(this)">品牌/诊断</button>
   </div>
   <div class="dl-grid" id="dlGrid"></div>
@@ -842,7 +877,7 @@ body {
 
 <!-- FOOTER -->
 <footer class="footer">
-  <p>Accio Work 商品平台使用指南 · 国际站商家使用指南（进阶版）</p>
+  <p>Accio Work 商家实操使用指南 · 国际站商家使用指南（进阶版）</p>
   <p style="margin-top:8px">
     <a href="https://www.accio-ai.com/login?sId=3zi8f11D" target="_blank">Accio Work 官网</a> ·
     <a href="https://github.com/chenye1313/accio-agent-teams" target="_blank">智能体团队仓库</a> ·
@@ -875,10 +910,11 @@ const skills = [
   {name:"深度诊断与增长白皮书",desc:"BET 国际站深度诊断：数据异常分析、买家画像、增长策略白皮书。",file:"store-diagnosis-whitepaper.zip",size:"10 KB",cat:"竞品分析",color:"#4f46e5",icon:"📋"},
   {name:"选品分析报告",desc:"深度商品分析，实时判断产品潜力，含1688货源库溯源。",file:"product-selection-advanced.zip",size:"20 KB",cat:"选品",color:"#10b981",icon:"🎯"},
   {name:"企业知识资产技能包",desc:"高阶选品 + 知识库：四象限分类、跨平台验证、优先级矩阵、蓝海扫描。",file:"enterprise-knowledge-base.zip",size:"108 KB",cat:"选品",color:"#10b981",icon:"📈"},
-  {name:"标题+关键词+商品卖点",desc:"黄金五段论卖点提炼、关键词矩阵、20 款标题组合策略。",file:"title-keyword-selling-points.7z",size:"35 KB",cat:"发品",color:"#f59e0b",icon:"🏷️"},
+  {name:"标题+关键词+商品卖点",desc:"黄金五段论卖点提炼、关键词矩阵、20 款标题组合策略，按 128 字符限额合规输出 Excel。",file:"title-keyword-selling.7z",size:"35 KB",cat:"发品",color:"#f59e0b",icon:"🏷️",demos:[{label:"案例",url:"https://www.accio-ai.com/work/share/jdWYeQX7mHMI"}]},
   {name:"结构化详情页专家",desc:"基于黄金五段论的深度卖点提炼及 20 张视觉详情页规划。",file:"structured-detail-page.7z",size:"2 KB",cat:"发品",color:"#f59e0b",icon:"🖼️"},
   {name:"B2B 主图专家（眼镜专版）",desc:"眼镜品类专属主图生成包，针对眼镜产品特点优化视觉呈现。",file:"b2b-main-image-sunglasses.zip",size:"7 MB",cat:"主图",color:"#8b5cf6",icon:"👓"},
   {name:"CID 图设计渲染",desc:"游乐设备行业 CID 设计与渲染专家：CAD 技术图纸（平面图、正视图、细节图）+ 3D 渲染效果图（主视觉、场景应用、多角度），覆盖滑梯、攀岩墙、蹦床公园、淘气堡等品类。",file:"cid-design-rendering.zip",size:"302 KB",cat:"主图",color:"#8b5cf6",icon:"🎨",demos:[{label:"案例1",url:"https://www.accio.com/work/share/B0UTbmzTlo1S"},{label:"案例2",url:"https://www.accio-ai.com/work/share/Pli0e3Y3JsNY"}]},
+  {name:"商机转化率分析",desc:"市场与竞争环境深度分析：数据驱动洞察、流量来源拆解、广告投放策略、评论管理（VOC）、AI 智能审核。",file:"conversion-rate-analysis.zip",size:"671 KB",cat:"流量",color:"#06b6d4",icon:"📊",demos:[{label:"案例",url:"https://www.accio-ai.com/work/share/GYpN0AghapZN"}]},
   {name:"RFQ 狙击手",desc:"RFQ 快速响应技能，自动分析买家需求并生成高质量报价方案。",file:"rfq-skill.md",size:"23 KB",cat:"询盘",color:"#ef4444",icon:"📨"},
   {name:"RFQ Scanner",desc:"RFQ 扫描器，自动筛选高质量商机并生成优先跟进建议。",file:"rfq-scanner.zip",size:"187 KB",cat:"询盘",color:"#ef4444",icon:"🔎"},
   {name:"高转化 SOP（沉默唤醒）",desc:"三阶客户画像 + 五维诊断模型 + 动态处方库（10类中英文模板），精准定位沉默原因并生成高打开率跟进邮件。",file:"high-end-conversion-sop.zip",size:"8 KB",cat:"询盘",color:"#ef4444",icon:"🤝"},
