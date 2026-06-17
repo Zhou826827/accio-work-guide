@@ -541,27 +541,58 @@ body {
 - 抓取店铺品牌、核心优势及真实产品图
 - 生成 1920x650 首页 Banner + 2-3 张社媒配图
 - 根据展会名称自动匹配视觉风格</code></pre>
-      <h3>CID 图设计与渲染 <span class="tag tag-purple" style="background:#8b5cf620;color:#8b5cf6">游乐设备专版</span></h3>
-      <p>专为游乐设备行业打造的 CID（产品效果图）设计与渲染技能，覆盖户外组合滑梯、攀岩墙、蹦床公园、秋千、摇摇乐、室内淘气堡等细分赛道，一键生成 CAD 技术图纸和 3D 渲染效果图。</p>
-      <p><strong>输入参数：</strong>产品名称与类型、整体尺寸（长×宽×高）、主要材质、功能模块、颜色方案、目标场景、输出需求。</p>
-      <pre><code>触发词：生成CAD图 / 3D渲染 / 技术图纸 / 工程图 / 效果图 / CID图
-
-示例指令：帮我生成一个户外组合滑梯的 CAD 图和 3D 效果图
-→ 尺寸 12×8×6 米，3 组滑梯、2 个攀爬区、1 个秋千
-→ 镀锌钢管 + LLDPE，蓝黄配色，安装在社区公园，全套 6 张图</code></pre>
-      <p><strong>输出内容（6 张图）：</strong></p>
+      <h3>CAD & 3D Render Generator <span class="tag tag-purple" style="background:#8b5cf620;color:#8b5cf6">高阶版</span></h3>
+      <p>专为游乐设备行业打造的 CID（产品效果图）设计与渲染技能，覆盖户外组合滑梯、攀岩墙、蹦床公园、秋千、摇摇乐、室内淘气堡等细分赛道，一键生成 CAD 技术图纸和 3D 渲染效果图。同时支持卫浴等品类的 CAD 与 3D 渲染需求。</p>
+      <pre><code>触发词（中英文均可）：
+中文：CAD图 / 3D渲染 / 效果图 / 技术图纸 / 工程图 / CID图
+英文：CAD drawing / 3D render / rendering / visualization</code></pre>
+      <h4>如何开始？（指令）</h4>
+      <p>为了能生成最精准的效果，通常需要提供以下信息：</p>
+      <ol>
+        <li><strong>产品类型</strong>（例如：户外森林风滑梯、室内海洋主题淘气堡、蹦床公园等）</li>
+        <li><strong>核心参数</strong>（长宽高尺寸、主要材质、配色要求等）</li>
+        <li><strong>目标场景</strong>（是放在户外草坪、沙地，还是室内商业空间？）</li>
+        <li><strong>特殊需求</strong>（是否需要特定的品牌配色或特定的视角？）</li>
+      </ol>
+      <h4>使用示例</h4>
+      <div class="callout-box" style="border-left-color:#8b5cf6">
+        <strong>示例 1 — 直接说产品：</strong><br>
+        "帮我生成一套户外组合滑梯的 CAD 图纸和 3D 效果图"<br>
+        → Agent 会自动问你收集尺寸、材质、颜色等参数
+      </div>
+      <div class="callout-box" style="border-left-color:#8b5cf6">
+        <strong>示例 2 — 带参数说：</strong><br>
+        "室内蹦床公园，20m×15m，黑色钢架+荧光蓝绿橙配色，帮我生成全套图纸"<br>
+        → Agent 会直接开始生成
+      </div>
+      <div class="callout-box" style="border-left-color:#8b5cf6">
+        <strong>示例 3 — 指定用途：</strong><br>
+        "我需要一套攀岩墙的效果图用于投标方案"<br>
+        → Agent 会按投标文档风格生成（更正式、含合规标准）
+      </div>
+      <h4>输出内容（每次生成 6 张图）</h4>
+      <p><strong>CAD 技术图纸（3 张）：</strong></p>
       <ul>
-        <li><strong>CAD 技术图纸（3 张）：</strong>总装平面图（俯视）、正视图/侧视图、细节放大图（连接节点/安全区域）</li>
-        <li><strong>3D 渲染效果图（3 张）：</strong>主视觉 Hero Shot（45° 商业展示级）、场景应用图（实景安装效果）、多角度展示图（2×2 网格四视角）</li>
+        <li>CAD 俯视平面图（含尺寸标注 + 功能分区）</li>
+        <li>CAD 正立面图（含材质标注 + 层高标注）</li>
+        <li>CAD 节点详图（含连接方式 + 安全间距）</li>
       </ul>
+      <p><strong>3D 渲染效果图（3 张）：</strong></p>
+      <ul>
+        <li>3D 主视觉渲染（白底产品图）</li>
+        <li>3D 场景效果图（实景安装效果）</li>
+        <li>3D 多角度展示图（正面 / 背面 / 侧面 / 俯视）</li>
+      </ul>
+      <div class="callout-warm"><strong>迭代优化：</strong>如果某张图不满意，告诉 Agent"第 3 张细节图需要调整焊接标注"即可单独重新生成。</div>
       <p><strong>适用材质：</strong>镀锌钢管、LLDPE 工程塑料、304 不锈钢、实木、玻璃钢、PVC 软包——技能自动匹配英文 prompt 中的材质质感描述。</p>
       <p><strong>安全标准参考：</strong>EN1176（欧洲）、ASTM F1487（美国）、GB/T 27689（中国），根据目标市场自动选用。</p>
       <div class="callout-warm"><strong>安全提示：</strong>AI 生成的图纸为效果展示图，不可替代专业工程师的施工图纸。承重结构、安全间距等关键参数需以专业计算为准，实际生产前必须进行结构安全评估。</div>
-      <p><strong>对话演示案例：</strong></p>
-      <ul>
-        <li><a href="https://www.accio.com/work/share/B0UTbmzTlo1S" target="_blank" style="color:#8b5cf6;font-weight:600">案例 1 — CID 绘图实操演示</a></li>
-        <li><a href="https://www.accio-ai.com/work/share/Pli0e3Y3JsNY" target="_blank" style="color:#8b5cf6;font-weight:600">案例 2 — CID 渲染效果展示</a></li>
-      </ul>
+      <h4>对话演示案例</h4>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
+        <a href="https://www.accio.com/work/share/B0UTbmzTlo1S" target="_blank" style="font-size:0.88em;color:#8b5cf6;text-decoration:none;font-weight:600;padding:5px 14px;border-radius:8px;background:#f5f3ff;border:1px solid #c4b5fd;transition:all 0.2s" onmouseover="this.style.background='#8b5cf6';this.style.color='#fff'" onmouseout="this.style.background='#f5f3ff';this.style.color='#8b5cf6'">▶ 卫浴案例</a>
+        <a href="https://www.accio-ai.com/work/share/Pli0e3Y3JsNY" target="_blank" style="font-size:0.88em;color:#8b5cf6;text-decoration:none;font-weight:600;padding:5px 14px;border-radius:8px;background:#f5f3ff;border:1px solid #c4b5fd;transition:all 0.2s" onmouseover="this.style.background='#8b5cf6';this.style.color='#fff'" onmouseout="this.style.background='#f5f3ff';this.style.color='#8b5cf6'">▶ CID 渲染效果展示</a>
+        <a href="https://www.accio-ai.com/work/share/WTvrsKsp6RSS" target="_blank" style="font-size:0.88em;color:#8b5cf6;text-decoration:none;font-weight:600;padding:5px 14px;border-radius:8px;background:#f5f3ff;border:1px solid #c4b5fd;transition:all 0.2s" onmouseover="this.style.background='#8b5cf6';this.style.color='#fff'" onmouseout="this.style.background='#f5f3ff';this.style.color='#8b5cf6'">▶ 游乐案例</a>
+      </div>
     </div>
   </div>
 
@@ -593,6 +624,21 @@ body {
 基于聊天背景撰写高打开率邮件 → 加入限时优惠钩子 → 开启回复监听</code></pre>
       <h4>定时任务</h4>
       <pre><code>帮我做成每日任务，每天 9:00 准时发送给我。</code></pre>
+      <h3>高转化 SOP <span class="tag tag-red" style="background:#ef444420;color:#ef4444">NEW</span></h3>
+      <p>专业的客户沉默唤醒 SOP，通过三阶画像 + 五维诊断 + 动态处方库，精准定位沉默原因并生成高打开率跟进邮件。</p>
+      <pre><code>指令：您可以直接贴出一段聊天记录，或者回答以下 3 个基础问题让我开始分析：</code></pre>
+      <ol>
+        <li><strong>客户类型：</strong>他是做主机厂配套、售后批发，还是终端维修？</li>
+        <li><strong>沉默节点：</strong>他最后一次回你是聊到了什么？（报了价？确认了样件？还是聊到了运费？）</li>
+        <li><strong>目前状态：</strong>沉默多久了？你中间追问过几次？用的是什么渠道？</li>
+      </ol>
+      <p><strong>技能具备能力：</strong></p>
+      <ul>
+        <li><strong>三阶客户画像 (A/B/C)：</strong>能根据关键词（如 IATF、Starter Order、VIN 码）瞬间锁定客户真实身份与核心痛点。</li>
+        <li><strong>五维诊断模型：</strong>从"客户、信息、渠道、信任、心理"五个深度维度切入，精准找出沉默的"病灶"。</li>
+        <li><strong>动态处方库：</strong>涵盖了从"需求确认"到"优雅退出"的 10 类精准中英文模板，每一条都能直接复制发送。</li>
+      </ul>
+      <div class="callout-warm"><strong>适用场景：</strong>客户报完价后沉默、样件确认后无下文、运费谈崩后失联、长期未回复的沉睡客户唤醒。</div>
     </div>
   </div>
 
@@ -668,6 +714,7 @@ body {
           <tr><td>询盘分析</td><td>分析近 7/30 天询盘 + 识别大买家</td></tr>
           <tr><td>买家背调</td><td>买家名称 + 全方位穿透调查</td></tr>
           <tr><td>客户唤醒</td><td>买家名称 + 72 小时无回复 + 唤醒程序</td></tr>
+          <tr><td>高转化 SOP</td><td>贴出聊天记录 / 回答客户类型+沉默节点+目前状态</td></tr>
           <tr><td>自动回复</td><td>激活 SellerAgent + 消息监听</td></tr>
           <tr><td>店铺诊断</td><td>店铺链接 + 深度诊断与增长</td></tr>
           <tr><td>品牌定位</td><td>多店铺链接 + TOP3 目标 + 品牌营销</td></tr>
@@ -745,7 +792,7 @@ const skills = [
   {name:"CID 图设计渲染",desc:"游乐设备行业 CID 设计与渲染专家：CAD 技术图纸（平面图、正视图、细节图）+ 3D 渲染效果图（主视觉、场景应用、多角度），覆盖滑梯、攀岩墙、蹦床公园、淘气堡等品类。",file:"cid-design-rendering.zip",size:"302 KB",cat:"主图",color:"#8b5cf6",icon:"🎨",demos:[{label:"案例1",url:"https://www.accio.com/work/share/B0UTbmzTlo1S"},{label:"案例2",url:"https://www.accio-ai.com/work/share/Pli0e3Y3JsNY"}]},
   {name:"RFQ 狙击手",desc:"RFQ 快速响应技能，自动分析买家需求并生成高质量报价方案。",file:"rfq-skill.md",size:"23 KB",cat:"询盘",color:"#ef4444",icon:"📨"},
   {name:"RFQ Scanner",desc:"RFQ 扫描器，自动筛选高质量商机并生成优先跟进建议。",file:"rfq-scanner.zip",size:"187 KB",cat:"询盘",color:"#ef4444",icon:"🔎"},
-  {name:"高端转化 SOP",desc:"高端客户转化标准操作流程，从询盘到成交的全链路策略。",file:"high-end-conversion-sop.zip",size:"8 KB",cat:"询盘",color:"#ef4444",icon:"🤝"},
+  {name:"高转化 SOP（沉默唤醒）",desc:"三阶客户画像 + 五维诊断模型 + 动态处方库（10类中英文模板），精准定位沉默原因并生成高打开率跟进邮件。",file:"high-end-conversion-sop.zip",size:"8 KB",cat:"询盘",color:"#ef4444",icon:"🤝"},
   {name:"经营定位超级版本",desc:"店铺经营定位分析：国家、产品、买家画像等维度输出定位方案。",file:"business-positioning-super.md",size:"11 KB",cat:"诊断",color:"#0ea5e9",icon:"🧭"},
   {name:"多店铺矩阵规划",desc:"多店铺矩阵布局策略，支持多品牌多渠道运营规划。",file:"multi-store-planning.7z",size:"9 KB",cat:"诊断",color:"#0ea5e9",icon:"🏪"},
   {name:"外贸经营定位专家 Team",desc:"智能体团队：店铺商机分析、行业对标、经营定位方案输出。从 GitHub 安装。",file:"accio-agent-teams",size:"—",cat:"诊断",color:"#0ea5e9",icon:"🤖",link:"https://github.com/chenye1313/accio-agent-teams"}
