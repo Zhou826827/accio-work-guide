@@ -439,17 +439,40 @@ body {
         <li>客户微信/企微咨询 → Accio 自动 AI 接待</li>
       </ol>
       <h3>个人微信绑定 <span class="tag tag-green">简易版</span></h3>
+
+      <h4>1. 绑定微信</h4>
+      <p>你的微信渠道目前是"扫码绑定"策略。点「重新绑定」会生成一个二维码，用你的微信扫码，你的微信号就和 Accio Work 的智能体绑定了。之后你在微信里给这个"机器人"发消息，Accio Work 就能收到并处理。</p>
+
+      <h4>2. 给智能体加一个"阿里数据查询"技能</h4>
+      <p>你目前绑定的智能体是"竞品分析师"。它需要有查询阿里后台数据的能力。做法：在 Accio Work 里创建一个新技能（SKILL.md），核心逻辑是：</p>
       <ol>
-        <li>Accio Work → 【配对授权/微信集成】→ 生成二维码</li>
-        <li>手机微信扫码 → 确认授权（无需 AppID/Secret）</li>
-        <li>微信发消息 → Accio 自动响应</li>
+        <li>用浏览器自动化打开 Alibaba.com 卖家后台</li>
+        <li>进入「数据参谋」抓询盘数据</li>
+        <li>进入「外贸直通车」抓花费数据</li>
+        <li>格式化成日报返回</li>
       </ol>
-      <h3>微信公众号绑定</h3>
+
+      <h4>3. 微信指令设计</h4>
+      <p>绑定后，你在微信里直接发消息给智能体，它识别指令并执行：</p>
+      <table style="width:100%;border-collapse:collapse;margin:16px 0">
+        <thead><tr style="background:#f0f9ff;text-align:left"><th style="padding:10px 14px;border:1px solid #e2e8f0;color:#0f172a;font-weight:700">微信发送</th><th style="padding:10px 14px;border:1px solid #e2e8f0;color:#0f172a;font-weight:700">效果</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:10px 14px;border:1px solid #e2e8f0">今日询盘</td><td style="padding:10px 14px;border:1px solid #e2e8f0">返回今日询盘总数 + 新询盘产品列表</td></tr>
+          <tr style="background:#f8fafc"><td style="padding:10px 14px;border:1px solid #e2e8f0">今日花费</td><td style="padding:10px 14px;border:1px solid #e2e8f0">返回直通车今日花费 + 点击/曝光/点击率</td></tr>
+          <tr><td style="padding:10px 14px;border:1px solid #e2e8f0">日报</td><td style="padding:10px 14px;border:1px solid #e2e8f0">询盘+花费合并日报</td></tr>
+          <tr style="background:#f8fafc"><td style="padding:10px 14px;border:1px solid #e2e8f0">本周趋势</td><td style="padding:10px 14px;border:1px solid #e2e8f0">近7天询盘和花费的折线数据</td></tr>
+          <tr><td style="padding:10px 14px;border:1px solid #e2e8f0">产品询盘排名</td><td style="padding:10px 14px;border:1px solid #e2e8f0">各产品询盘量 TOP10</td></tr>
+          <tr style="background:#f8fafc"><td style="padding:10px 14px;border:1px solid #e2e8f0">花费 TOP5</td><td style="padding:10px 14px;border:1px solid #e2e8f0">花费最多的5个关键词</td></tr>
+        </tbody>
+      </table>
+
+      <h4>4. 定时任务（自动推送）</h4>
+      <p>在侧边栏「定时任务」入口配置一个每天早上 9 点自动执行的任务：</p>
       <ol>
-        <li>公众号后台 → 设置与开发 → 开发者 ID → 复制 AppID/AppSecret</li>
-        <li>Accio 【消息渠道】→ 公众号 → 粘贴 ID/密钥 → 提交</li>
-        <li>配置 IP 白名单与接口 → 完成</li>
+        <li>任务内容：查昨日询盘+花费 → 格式化日报</li>
+        <li>通过消息渠道推送到你的微信</li>
       </ol>
+      <p style="color:#059669;font-weight:600">这样你每天早上自动收到日报，临时想看就手动发指令。</p>
       <div class="callout-warm">
         <strong>大客户场景：</strong>优先企业微信 + 微信客服，支持客户微信直接咨询、AI 自动回复、工单同步。
       </div>
